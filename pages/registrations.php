@@ -81,13 +81,6 @@
 		 <div class="line"></div>
 		<h1>ARK 2K18</h1>
 		<center><div class="line_2"></div></center>
-    <div class="menu-2">
-      <a href="#">HOME</a>
-      <a href="#">ABOUT</a>
-      <a href="#">EVENTS</a>
-      <a href="#">REGISTRATION</a>
-      <a href="#">SCHEDULE</a>
-    </div>
     <div class="navigator">
     	REGISTRATIONS
     </div>
@@ -109,17 +102,41 @@
     <div id="timer" class="timer">
           
     </div>
-    <form name="reg-form" action="../resources/api.php?action=register&amp;session=<?php echo $session_get;?>" onsubmit="return validateForm()" method="POST" style="padding-bottom: 80px;">
+    <form name="reg-form" action="../resources/api.php?action=register&amp;session=<?php echo $session_get;?>" onsubmit="return validateForm()" method="POST" style="padding-bottom: 80px; max-width: 700px;margin: auto;">
+      <input type="text" name="clg_name" placeholder="College" class="txt-sml"><br>
+      <select name="event" class="select">
+        <option value="0">BUISNESS PLAN</option>
+        <option value="1">BRIDGE KIRTI</option>
+        <option value="2">CHECK YOUR KNOWLEDGE</option>
+        <option value="3">CODING CONTEST</option>
+        <option value="4">DEBATE</option>
+        <option value="5">fRUGAL ENGINEERING</option>
+        <option value="6">JUST A MINUTE</option>
+        <option value="7">ROBO RACE</option>
+        <option value="8">ROBO WAR</option>
+        <option value="9">TECHNICAL POSTER</option>
+      </select>
+      <select name="no_of_participants" class="select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+      </select>
 
-    	<input type="text" name="name" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-    	<input type="text" name="clg_name" placeholder="College" class="txt-sml"><br>
-    	<input type="text" name="email" placeholder="Email" class="txt-sml"><br>
-    	<input type="text" name="roll_no" placeholder="Roll Number" class="txt-sml"><br>
-    	<input type="text" name="mob_no" placeholder="Mobile Number" class="txt-sml"><br>
-    	<input type="password" name="pass" placeholder="Password" class="txt-sml"><br>
-
-    	<input type="submit" name="submit" placeholder="Register" value="Register" class="btn-sml">
-
+    <div class="row">
+    <div class="col-sm-6">
+    	<input type="text" name="name_1" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
+    	<input type="text" name="email_1" placeholder="Email" class="txt-sml"><br>
+    	<input type="text" name="roll_no_1" placeholder="Roll Number" class="txt-sml"><br>
+    	<input type="text" name="mob_no_1" placeholder="Mobile Number" class="txt-sml"><br>
+    </div>
+    <div class="col-sm-6">
+      <input type="text" name="name_2" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email_2" placeholder="Email" class="txt-sml"><br>
+      <input type="text" name="roll_no_2" placeholder="Roll Number" class="txt-sml"><br>
+      <input type="text" name="mob_no_2" placeholder="Mobile Number" class="txt-sml"><br>
+    </div>
+    	
+    </div>
+    <input type="submit" name="submit" placeholder="Register" value="Register" class="btn-sml">
     </form>
     <div class="footer">
 		<div class="line_3"></div>
