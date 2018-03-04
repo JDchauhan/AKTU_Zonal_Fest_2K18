@@ -54,6 +54,13 @@
   		}
 		}, 1000);
 	</script>
+  
+  <style type="text/css">
+    .txt-sml
+    {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -115,8 +122,8 @@
         <option value="9">TECHNICAL POSTER</option>
       </select>
       <select name="no_of_participants" class="select" onchange="disable()" id="select">
-        <option value="2">2</option>
-        <option value="1">1</option>
+        <option value="2">Team Size = 2</option>
+        <option value="1">Team Size = 1</option>
       </select>
 
     <div class="row">
