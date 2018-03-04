@@ -181,6 +181,65 @@
             }
         }
 
+        function download_event_csv(){
+            global $session_get;
+            //for coordinators- enter their unique id and this function download their event participations
+            $token = $_POST["token"];
+            $statement = executedStatement("SELECT event, event_id  FROM Zonal_event WHERE
+                                             token='$token' ");
+            $result = $statement->Fetch(PDO::FETCH_ASSOC);
+
+            if($result){
+                $event_id = $result["event_id"];
+                $event_name = $result["event"];
+                
+                
+                $statement = executedStatement("SELECT * FROM Student WHERE event_id = '$event_id' ORDER BY team DESC ");
+                //construct file
+                $filepath = "downloads/" . $event_id . ".csv";
+                $result = $statement->FetchAll(PDO::FETCH_ASSOC);
+
+                $file = fopen($filepath,"w");
+
+                $arr[0] = ",," . $event_name  ;
+                $arr[1] = "";
+                $arr[2] = "Roll No, Name, College, Email, Mobile, Team"  ;
+                $arr[3] = "";
+
+                for($i=0; $i<sizeof($result); $i++ ){
+                    $line = "" . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
+                            ","  . $result[$i]["email"] .  ","  . $result[$i]["mobile"] .  ","  . "TID-" .$result[$i]["team"];
+                    $arr[$i + 4] = $line;   
+                }
+                foreach ($arr as $line){
+                    fputcsv($file,explode(',',$line));
+                }
+                fclose($file); 
+                header('Content-Description: File Transfer');
+                header('Content-Type: application/octet-stream');
+                header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
+                header('Expires: 0');
+                header('Cache-Control: must-revalidate');
+                header('Pragma: public');
+                header('Content-Length: ' . filesize($filepath));
+                flush(); // Flush system output buffer
+                readfile($filepath);
+
+            }else{
+                
+                $_SESSION["msg"]["type"] = "error";
+                $_SESSION["msg"]["head"] = "Access Denied";
+                $_SESSION["msg"]["body"] = "Please enter the correct key";
+                
+                $head = "Location: ../pages/co-ordinator-panel.php?session=" . $session_get;
+                header($head);
+            }
+
+        }
+
+
+
+
 
 
 
