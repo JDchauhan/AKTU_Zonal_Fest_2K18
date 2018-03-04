@@ -150,7 +150,7 @@
                 
                 if($result){
                     
-                    $_SESSION["msg"]["type"] = "err";
+                    $_SESSION["msg"]["type"] = "error";
                     $_SESSION["msg"]["head"] = "Email ID already exists";
                     $_SESSION["msg"]["body"] = "One of the email ID you entered already exists in our DataBase";
                     
@@ -185,7 +185,7 @@
             global $session_get;
             //for coordinators- enter their unique id and this function download their event participations
             $token = $_POST["token"];
-            $statement = executedStatement("SELECT event, event_id  FROM Zonal_event WHERE
+            $statement = executedStatement("SELECT event, event_id  FROM Zonal_Event WHERE
                                              token='$token' ");
             $result = $statement->Fetch(PDO::FETCH_ASSOC);
 
