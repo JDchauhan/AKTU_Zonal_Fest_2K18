@@ -70,35 +70,63 @@
              * function used to register a new user through POST data
              */
             global $session_get;
-
-            $name = $_POST["name"];
+            
             $clg = $_POST["clg_name"]; 
-            $email = $_POST["email"];
-            $roll = (int)$_POST["roll_no"];
-            $mobile = (int)$_POST["mob_no"];
-            $pass = $_POST["pass"];
-            $verification_token = guid();
+            $event_id = $_POST["event"] + 1;
+            $teamSize = $_POST["no_of_participants"];  
+            
+
+            $name_1 = $_POST["name_1"];
+            $email_1 = $_POST["email_1"];
+            $roll_1 = (int)$_POST["roll_no_1"];
+            $mobile_1 = (int)$_POST["mob_no_1"];
+            
+            $name_2 = $_POST["name_2"];
+            $email_2 = $_POST["email_2"];
+            $roll_2 = (int)$_POST["roll_no_2"];
+            $mobile_2 = (int)$_POST["mob_no_2"];
+            
+            $team = guid();
 
             $err_form = "";
             $err_status = 0;
 
-            if(!validater($mobile,"int")){
-                $err_form .= "invalid mobile <br/>";
-                $err_status = 1;
+            if($teamSize == 2){
+                if(!( validater($mobile_1,"int") && validater($mobile_1,"int") ) ){
+                    $err_form .= "invalid mobile <br/>";
+                    $err_status = 1;
+                }
+                if(!(validater($roll_1,"int") && validater($roll_2,"int"))){
+                    $err_form .= "invalid roll number <br/>";
+                    $err_status = 1;
+                }
+                if(!(validater($email_1,"email") && validater($email_2,"email") )){
+                    $err_form .= "invalid email <br/>";
+                    $err_status = 1;
+                }
+                if($name_1 == "" || $clg == "" || $email_1 == "" || $roll_1 == "" || $mobile_1 == "" ||
+                    $name_1 == "" ||  $email_1 == "" || $roll_1 == "" || $mobile_1 == ""){
+                    $err_form .= "Please fill all the details <br/>";
+                    $err_status = 1;
+                }
+            }else{
+                if(!( validater($mobile_1,"int")) ){
+                    $err_form .= "invalid mobile <br/>";
+                    $err_status = 1;
+                }
+                if(!(validater($roll_1,"int") )){
+                    $err_form .= "invalid roll number <br/>";
+                    $err_status = 1;
+                }
+                if(!(validater($email_1,"email") )){
+                    $err_form .= "invalid email <br/>";
+                    $err_status = 1;
+                }
+                if($name_1 == "" || $clg == "" || $email_1 == "" || $roll_1 == "" || $mobile_1 == "" ){
+                    $err_form .= "Please fill all the details <br/>";
+                    $err_status = 1;
+                }
             }
-            if(!validater($roll,"int")){
-                $err_form .= "invalid roll number <br/>";
-                $err_status = 1;
-            }
-            if(!validater($email,"email")){
-                $err_form .= "invalid email <br/>";
-                $err_status = 1;
-            }
-            if($name == "" || $clg == "" || $email == "" || $roll == "" || $mobile == "" || $pass == ""){
-                $err_form .= "Please fill all the details <br/>";
-                $err_status = 1;
-            }
-
             if($err_status){
                 $_SESSION["msg"]["type"] = "error";
                 $_SESSION["msg"]["head"] = "Registration Failed";
@@ -109,122 +137,49 @@
                 $conn=connections();
                 
                 //check if user exists
-                $statement = executedStatement("SELECT email , status FROM Students WHERE
-                                                email='$email' ");
-                $result = $statement->Fetch(PDO::FETCH_ASSOC);
+                if($teamSize == 2){
+                    $statement = executedStatement("SELECT email FROM Student WHERE
+                                                email='$email_1' OR email='$email_2' ");
+                    $result = $statement->Fetch(PDO::FETCH_ASSOC);
                 
-                if($result && $result["status"] == 0){
-                    //verification pending
-                    //update data for user and send verification link
-
-                    $sql = "UPDATE Students SET roll='$roll', name='$name', password='$pass', mobile='$mobile', college='$clg', status=0  WHERE email='$email'";
-                    $conn->exec($sql);
+                }else{
+                    $statement = executedStatement("SELECT email FROM Student WHERE
+                                                email='$email_1' ");
+                    $result = $statement->Fetch(PDO::FETCH_ASSOC);
+                }
+                
+                if($result){
                     
-                    //create Access_key for new registration-mail verification 
-                    $sql = "UPDATE Access_key SET token='$verification_token' WHERE email='$email'AND service='new_registration' ";
-                    $conn->exec($sql);
+                    $_SESSION["msg"]["type"] = "err";
+                    $_SESSION["msg"]["head"] = "Email ID already exists";
+                    $_SESSION["msg"]["body"] = "One of the email ID you entered already exists in our DataBase";
                     
-                    //mail the new token
-                    OTM($email, $roll, $name, $verification_token, "new_registration");
-
-                    $_SESSION["msg"]["type"] = "success";
-                    $_SESSION["msg"]["head"] = "Registration Successfull";
-                    $_SESSION["msg"]["body"] = "Please verify your account by clicking on the link you recieved in your registered " .
-                                                "email ID";
-                    
-                    $head = "Location: ../pages/login.php?session=" . $session_get;                     
-                    header($head);
-
-                }else if($result && $result["status"] == 1){
-                    //user already exists
-                    
-                    $_SESSION["msg"]["type"] = "error";
-                    $_SESSION["msg"]["head"] = "Registration Failed";
-                    $_SESSION["msg"]["body"] = "This email id already exists. Please choose another";                
-                    $head = "Location: ../pages/registrations.php?session=" . $session_get;
+                    $head = "Location: ../pages/registrations.php?session=" . $session_get;                     
                     header($head);
 
                 }else{
                     //fresh user
-                    $sql = "INSERT INTO Students VALUES ('$roll', '$name', '$pass', '$email', '$mobile', '$clg', 0, NULL)"; 
-                    $conn->exec($sql); 
-
-                    $sql = "INSERT INTO Access_key VALUES ('$email', '$verification_token','new_registration')"; 
-                    $conn->exec($sql);
+                    if($teamSize == 2){
+                        $sql = "INSERT INTO Student VALUES ('$roll_1', '$name_1', '$email_1', '$mobile_1', '$clg', '$event_id', '$team')"; 
+                        $conn->exec($sql); 
+                        $sql = "INSERT INTO Student VALUES ('$roll_2', '$name_2', '$email_2', '$mobile_2', '$clg', '$event_id', '$team')"; 
+                        $conn->exec($sql);  
                     
-                    OTM($email, $roll, $name, $verification_token, "new_registration");//mail the new token
+
+                    }else{
+                        $sql = "INSERT INTO Student VALUES ('$roll_1', '$name_1', '$email_1', '$mobile_1', '$clg', '$event_id', '$team')"; 
+                        $conn->exec($sql); 
+                    }
                     
                     $_SESSION["msg"]["type"] = "success";
                     $_SESSION["msg"]["head"] = "Registration Successfull";
-                    $_SESSION["msg"]["body"] = "Please verify your account by clicking on the link you recieved in your registered " .
-                                                "email ID";
+                    $_SESSION["msg"]["body"] = "Participants successfully Registered for this event";
                     
-                    $head = "Location: ../pages/login.php?session=" . $session_get;
+                    $head = "Location: ../pages/registrations.php?session=" . $session_get;
                     header($head);   
                 }
             }
         }
-
-        function download_event_csv(){
-            global $session_get;
-            //for coordinators- enter their unique id and this function download their event participations
-            $token = $_POST["token"];
-            $statement = executedStatement("SELECT event, event_id  FROM Events WHERE
-                                             token='$token' ");
-            $result = $statement->Fetch(PDO::FETCH_ASSOC);
-
-            if($result){
-                $event_id = $result["event_id"];
-                $event_name = $result["event"];
-                
-                
-                $statement = executedStatement("SELECT DISTINCT Students.roll, Students.name, Students.college, Students.email,
-                                                Students.mobile FROM Students INNER JOIN
-                                                Participation ON Students.email = Participation.email WHERE
-                                                Participation.event_id='$event_id' ");
-                //construct file
-                $filepath = "downloads/" . $event_id . ".csv";
-                $result = $statement->FetchAll(PDO::FETCH_ASSOC);
-                $file = fopen($filepath,"w");
-
-                $arr[0] = ",," . $event_name  ;
-                $arr[1] = "";
-                $arr[2] = "Roll No, Name, College, Email, Mobile"  ;
-                $arr[3] = "";
-
-                for($i=0; $i<sizeof($result); $i++ ){
-                    $line = "" . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
-                            ","  . $result[$i]["email"] .  ","  . $result[$i]["mobile"];
-                    $arr[$i + 4] = $line;   
-                }
-                foreach ($arr as $line){
-                    fputcsv($file,explode(',',$line));
-                }
-                fclose($file); 
-                header('Content-Description: File Transfer');
-                header('Content-Type: application/octet-stream');
-                header('Content-Disposition: attachment; filename="'.basename($filepath).'"');
-                header('Expires: 0');
-                header('Cache-Control: must-revalidate');
-                header('Pragma: public');
-                header('Content-Length: ' . filesize($filepath));
-                flush(); // Flush system output buffer
-                readfile($filepath);
-
-            }else{
-                
-                $_SESSION["msg"]["type"] = "error";
-                $_SESSION["msg"]["head"] = "Access Denied";
-                $_SESSION["msg"]["body"] = "Please enter the correct key";
-                
-                $head = "Location: ../pages/co-ordinator-panel.php?session=" . $session_get;
-                header($head);
-            }
-
-        }
-
-
-
 
 
 
