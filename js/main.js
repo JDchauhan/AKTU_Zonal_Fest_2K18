@@ -98,6 +98,9 @@ function validateForm()
     var email_2=document.forms["reg-form"]["email_2"].value;
     var roll_no_2=document.forms["reg-form"]["roll_no_2"].value;
     var mob_no_2=document.forms["reg-form"]["mob_no_2"].value;
+    var participants=document.forms["reg-form"]["no_of_participants"].value;
+    if(participants==2)
+    {
     if(clg_name== "")
     {
         document.getElementById("message").className="";
@@ -147,6 +150,59 @@ function validateForm()
         document.getElementById("message").innerHTML="PLEASE CORRECT MOBILE NUMBER";
         return false;
     }
+}
+else
+{
+    if(clg_name== "")
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER COLLEGE NAME";
+        return false;
+    }
+    else if(event=="")
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE CHOOSE A EVENT";
+        return false;
+    }
+    else if (name_1 == "") 
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER YOUR NAME";
+        return false;
+    }
+    else if(email_1== "")
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+        return false;
+    }
+    else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_1)))
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER CORRECT EMAIL";
+        return false;
+    }
+    else if(isNaN(roll_no_1) || roll_no_1.length < 1)
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER CORRECT ROLL NUMBER";
+        return false;
+    }
+    else if(mob_no_1.length != 10 || isNaN(mob_no_1))
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE CORRECT MOBILE NUMBER";
+        return false;
+    }
+}
 }
 function disable()
 {
