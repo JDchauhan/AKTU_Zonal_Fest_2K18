@@ -54,6 +54,13 @@
   		}
 		}, 1000);
 	</script>
+  
+  <style type="text/css">
+    .txt-sml
+    {
+      margin-top: 20px;
+    }
+  </style>
 </head>
 
 <body>
