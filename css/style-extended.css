@@ -31,6 +31,27 @@ body
 	font-size: 15px;
 	letter-spacing: 2px;
 }
+.select
+{
+	margin-top: 30px;
+	height: 35px;
+	width: 300px;
+	padding: 10px;
+	border: 0.01em solid rgba(24, 116, 205,0.8);
+	font-family: 'Audiowide', cursive;
+	color: white;
+	font-size: 15px;
+	letter-spacing: 2px;
+	background-color: transparent;
+}
+.select option
+{
+	color: black;
+}
+.select:hover
+{
+	outline: none;
+}
 .btn-sml
 {
 	height: 35px;

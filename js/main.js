@@ -87,60 +87,87 @@ waves: [
 });
 
 function validateForm() 
-{
-    var name = document.forms["reg-form"]["name"].value;
+{   
     var clg_name=document.forms["reg-form"]["clg_name"].value;
-    var email=document.forms["reg-form"]["email"].value;
-    var roll_no=document.forms["reg-form"]["roll_no"].value;
-    var mob_no=document.forms["reg-form"]["mob_no"].value;
-    var pass=document.forms["reg-form"]["pass"].value;
-    if (name == "") 
-    {
-        document.getElementById("message").className="";
-        document.getElementById("message").className="error";
-        document.getElementById("message").innerHTML="PLEASE ENTER YOUR NAME";
-        return false;
-    }
-    else if(email== "")
-    {
-        document.getElementById("message").className="";
-        document.getElementById("message").className="error";
-        document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
-        return false;
-    }
-    else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)))
-    {
-        document.getElementById("message").className="";
-        document.getElementById("message").className="error";
-        document.getElementById("message").innerHTML="PLEASE ENTER CORRECT EMAIL";
-        return false;
-    }
-    else if(clg_name== "")
+    var event=document.forms["reg-form"]["event"].value;
+    var name_1 = document.forms["reg-form"]["name_1"].value;
+    var email_1=document.forms["reg-form"]["email_1"].value;
+    var roll_no_1=document.forms["reg-form"]["roll_no_1"].value;
+    var mob_no_1=document.forms["reg-form"]["mob_no_1"].value;
+    var name_2 = document.forms["reg-form"]["name_2"].value;
+    var email_2=document.forms["reg-form"]["email_2"].value;
+    var roll_no_2=document.forms["reg-form"]["roll_no_2"].value;
+    var mob_no_2=document.forms["reg-form"]["mob_no_2"].value;
+    if(clg_name== "")
     {
         document.getElementById("message").className="";
         document.getElementById("message").className="error";
         document.getElementById("message").innerHTML="PLEASE ENTER COLLEGE NAME";
         return false;
     }
-    else if(isNaN(roll_no) || roll_no.length < 1)
+    else if(event=="")
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE CHOOSE A EVENT";
+        return false;
+    }
+    else if (name_1 == "" || name_2 == "") 
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER YOUR NAME";
+        return false;
+    }
+    else if(email_1== ""||email_2=="")
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+        return false;
+    }
+    else if(!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_1))||!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email_2)))
+    {
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER CORRECT EMAIL";
+        return false;
+    }
+    else if(isNaN(roll_no_1) || isNaN(roll_no_2) || roll_no_1.length < 1 || roll_no_2.length < 1)
     {
         document.getElementById("message").className="";
         document.getElementById("message").className="error";
         document.getElementById("message").innerHTML="PLEASE ENTER CORRECT ROLL NUMBER";
         return false;
     }
-    else if(mob_no.length != 10 || isNaN(mob_no))
+    else if(mob_no_1.length != 10 || isNaN(mob_no_2) || mob_no_2.length != 10 || isNaN(mob_no_2))
     {
         document.getElementById("message").className="";
         document.getElementById("message").className="error";
         document.getElementById("message").innerHTML="PLEASE CORRECT MOBILE NUMBER";
         return false;
     }
-    else if(pass=="")
+}
+function disable()
+{
+    var select=document.getElementById("select").value;
+    var form2=document.getElementById("form2");
+    var form1=document.getElementById("form1");
+    
+    if (select==1) 
     {
-        document.getElementById("message").className="";
-        document.getElementById("message").className="error";
-        document.getElementById("message").innerHTML="PLEASE ENTER A PASSWORD";
-        return false;
+        form2.className="";
+        form2.className="hidden";
+        form1.className="";
+        form1.className="col-sm-12";
+
+    }
+    else if(select==2)
+    {
+        form2.className="";
+        form2.className="col-sm-6";
+        form1.className="";
+        form1.className="col-sm-6";
+
     }
 }
