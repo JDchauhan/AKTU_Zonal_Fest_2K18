@@ -116,19 +116,19 @@
         <option value="8">ROBO WAR</option>
         <option value="9">TECHNICAL POSTER</option>
       </select>
-      <select name="no_of_participants" class="select">
-        <option value="1">1</option>
+      <select name="no_of_participants" class="select" onchange="disable()" id="select">
         <option value="2">2</option>
+        <option value="1">1</option>
       </select>
 
     <div class="row">
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="form1">
     	<input type="text" name="name_1" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
     	<input type="text" name="email_1" placeholder="Email" class="txt-sml"><br>
     	<input type="text" name="roll_no_1" placeholder="Roll Number" class="txt-sml"><br>
     	<input type="text" name="mob_no_1" placeholder="Mobile Number" class="txt-sml"><br>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-6" id="form2">
       <input type="text" name="name_2" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
       <input type="text" name="email_2" placeholder="Email" class="txt-sml"><br>
       <input type="text" name="roll_no_2" placeholder="Roll Number" class="txt-sml"><br>

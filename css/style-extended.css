@@ -44,6 +44,14 @@ body
 	letter-spacing: 2px;
 	background-color: transparent;
 }
+.select option
+{
+	color: black;
+}
+.select:hover
+{
+	outline: none;
+}
 .btn-sml
 {
 	height: 35px;
