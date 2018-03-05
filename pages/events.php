@@ -168,7 +168,7 @@
       <li>The Judges decision will be final and binding to all.</li>
     </ul>
     <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=1" method="POST">
+    <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
@@ -188,10 +188,10 @@
       <li>Crown of arch must be above horizontal span and its height should not exceed 25 cm.</li>
     </ul>
     <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=2" method="POST">
+    <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="3">&gt;</button>
     </form>
   </center>
   </div>
@@ -213,10 +213,10 @@
     </ul>
 
     <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=2" method="POST">
+    <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="4">&gt;</button>
     </form>
   </center>
   </div>
@@ -228,10 +228,10 @@
     </ul>
 
     <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=2" method="POST">
+    <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="5">&gt;</button>
     </form>
   </center>
   </div>
@@ -240,24 +240,10 @@
 
 
     <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=2" method="POST">
+    <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
-    </form>
-  </center>
-    
-  </div>
-
-  <div class="item">
-
-
-
-    <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=2" method="POST">
-      <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
-      <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="6">&gt;</button>
     </form>
   </center>
     
@@ -265,11 +251,55 @@
 
   <div class="item">
 
+
+
     <center>
-    <form action="../resources/api.php?action=event_registered&amp;id=2" method="POST">
+    <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="2">&gt;</button>
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="7">&gt;</button>
+    </form>
+  </center>
+    
+  </div>
+
+<div class="item">
+
+
+
+<center>
+<form action="registrations.php" method="POST">
+  <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
+  <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
+   <button class="back" type="button" data-target="#myCarousel2" data-slide-to="8">&gt;</button>
+</form>
+</center>
+
+</div>
+
+
+<div class="item">
+
+
+
+<center>
+<form action="registrations.php" method="POST">
+  <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
+  <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
+   <button class="back" type="button" data-target="#myCarousel2" data-slide-to="9">&gt;</button>
+</form>
+</center>
+
+</div>
+
+
+  <div class="item">
+
+    <center>
+    <form action="registrations.php" method="POST">
+      <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
+      <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="1">&gt;</button>
     </form>
   </center>
     
