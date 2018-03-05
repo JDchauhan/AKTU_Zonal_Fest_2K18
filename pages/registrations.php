@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Ebullience 2K18</title>
+	<title>AKTU Zonal Fest 2K18</title>
 
 	<meta charset="utf-8">
 
