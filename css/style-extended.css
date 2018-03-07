@@ -5,6 +5,14 @@ body
 	overflow-y: hidden;
 	overflow-x: hidden;
 }
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}
 .navigator
 {
 	color: white;
@@ -75,6 +83,8 @@ body
 	display: relative;
 	margin-top: 30px;
 	max-width: 650px;
+	max-height: 350px;
+	overflow-y: auto;
 }
 .event-linker
 {
@@ -98,13 +108,21 @@ body
 {
 	list-style: none;
 	margin-top: 20px;
+	text-align: left;
+	display: inline-block;
+}
+.item
+{
+	max-height: 400px;
+	overflow-y: auto;
 }
 .item ul li
 {
 	color: white;
-	font-family: 'Audiowide', cursive;
+	font-family: 'Montserrat', sans-serif;
 	margin-top: 10px;
 	font-size: 15px;
+	text-align: left;
 }
 .register
 {
