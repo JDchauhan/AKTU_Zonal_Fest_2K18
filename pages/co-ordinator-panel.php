@@ -118,7 +118,13 @@
 
       </form>
 
+      <form action="" method="POST" style="margin-top: 50px;">
 
+      <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
+
+      <input type="submit" name="submit" placeholder="Download All Data" value="Download All Data" class="btn-sml" style="width: auto;">
+
+      </form>
         <div class="footer">
     <div class="line_3"></div>
       Designed And Developed By 
