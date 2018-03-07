@@ -112,7 +112,7 @@
 
     <img src="images/niet.png" class="aktu2">
     <h5 class="subhead-expanded">
-      Accredited by NAAC (A Grade) CSE, ECE, ME, &amp; B.Pharm are NBA accredited 99th Rank by NIRF (2016)
+      Accredited by NAAC (A Grade) | CSE, ECE, ME, &amp; B.Pharm are NBA accredited | 99th Rank by NIRF (2016)
     </h5>
     <h1 class="head-compressed">NIET, GR. NOIDA</h1>
 		<center><div class="line_2"></div></center>
@@ -142,7 +142,9 @@
     
 
     <div class="footer">
-      <h4>TECHNICAL, LITERARY AND MANAGEMENT ZONAL FEST</h4>
+      <h4 class="head-expanded">
+      TECHNICAL, LITERARY AND MANAGEMENT ZONAL FEST
+      </h4>
 		<div class="line_3"></div>
 			Designed And Developed By 
 

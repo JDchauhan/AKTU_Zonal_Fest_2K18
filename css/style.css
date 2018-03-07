@@ -13,6 +13,7 @@ html, body:hover
 }
 #overlayer
 {
+	
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -23,7 +24,7 @@ html, body:hover
 .arc
 {
 	position: absolute;
-	top: 15%;
+	top: 13%;
 	left: 30%;
 }
 .menu
@@ -147,14 +148,14 @@ html, body:hover
 {
 	float: left;
 	display: inline-block;
-	height: 70px;
-	margin-left: -80px;
+	height: 100px;
+	margin-left: -120px;
 	position: absolute;
 }
 .aktu2
 {
 	display: inline-block;
-	height: 70px;
+	height: 100px;
 	margin-right: -80px;
 	position: absolute;
 }
@@ -782,6 +783,15 @@ a.author:hover{
 	.dev-cont .content-2
 	{
 		margin-left: 0px;
+	}
+	.hidden-mobile
+	{
+		display: none !important;
+	}
+	.item
+	{
+		max-height: 350px;
+		overflow-y: auto;
 	}
 }
 .dev-cont

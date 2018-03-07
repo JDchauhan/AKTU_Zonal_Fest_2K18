@@ -87,7 +87,7 @@
 
     <img src="../images/niet.png" class="aktu2">
     <h5 class="subhead-expanded">
-      Accredited by NAAC (A Grade) CSE, ECE, ME, &amp; B.Pharm are NBA accredited 99th Rank by NIRF (2016)
+      Accredited by NAAC (A Grade) | CSE, ECE, ME, &amp; B.Pharm are NBA accredited | 99th Rank by NIRF (2016)
     </h5>
     <h1 class="head-compressed">NIET, GR. NOIDA</h1>
     <center><div class="line_2"></div></center>
@@ -123,7 +123,7 @@
     <div class="event-cont">
       
         <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="1">
-            BUISNESS PLAN<br><br>
+            BUSINESS PLAN<br><br>
         </button>
         <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="2">
             BRIDGE KRITI<br><br>
@@ -158,8 +158,10 @@
   </div>
 
   <div class="item">
-    <h3>BUISNESS PLAN</h3>
-    <ul>
+    <h3>BUSINESS PLAN</h3>
+
+    <ul>      
+      <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>Individual participant can take part</li>
       <li>Have to explore business ideas to run the Business.</li>
       <li>Topics will be given</li>
@@ -179,6 +181,7 @@
   <div class="item">
     <h3>BRIDGE KRITI</h3>
     <ul>
+      <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>Be a real builder, identify how the geometry affects the bridge design, functions and apply that knowledge to construct a model of a bridge using ice cream sticks. Bridge kriti provide a platform to young engineers to showcase their construction skills amidst several constraints. </li>
 
       <li>Each Team can have 2 members. Maximum two teams Design a Bridge of given specifications satisfying the stated constraints using popsicles (ice). </li>
@@ -200,6 +203,7 @@
     <h3>CHECK YOUR KNOWLEDGE</h3>
 
     <ul>
+      <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>Questions will be of general awareness type</li>
       <li>Each college can send one team only</li>
       <li>Each team to have 2 members</li>
@@ -207,7 +211,7 @@
       <li> Each question will carry 3 points for correct answer. </li>
       <li>For wrong answer no point will be given. No negative points will be awarded. </li>
       <li>Only ONE attempt for one question is permissible</li>
-      <li> For no answer attempted, question will be passed to next team. It will be given chance to answer the question in 5 seconds and Ipoint for right answer will be awarded. </li>
+      <li> For no answer attempted, question will be passed to next team. It will be given chance to answer the question in 5 seconds and  4 point for right answer will be awarded. </li>
       <li>There will be 5 to 10 rounds depending upon number of team participating and availability of team. </li>
       <li>The Judges decision will be final and binding to all. </li>
     </ul>
@@ -224,6 +228,7 @@
   <div class="item">
     <h3>CODING CONTEST</h3>
     <ul>
+      <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>There will be two rounds in the contest</li>
 
       <li>Round A:</li>
@@ -253,6 +258,7 @@
   <div class="item">
     <h3>DEBATE (ENGLISH AND HINDI)</h3>
     <ul>
+      <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>No. of Participant — Individual Participation (Either Male or Female).</li>
 
 <li>Topic for the debate will be given on day of the event .</li>
@@ -279,6 +285,7 @@ answer the audience / judges questions /interjections.</li>
   <div class="item">
       <h3>FRUGAL ENGINEERING</h3>
 <ul>
+  <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Participation can be as individual or group containing not more than 2 members.
 <li>Item to be made can be of any nature, may be civil, mechanical,electrical etc. or of general use.
 <li>Scrap material has to be brought by group itself.
@@ -286,7 +293,7 @@ answer the audience / judges questions /interjections.</li>
 <li>Use of colours or any other decorative items are prohibited.
 <li>Participants need to bring adhesives, tapes, scissors and cutting tools themselves.
 <li>Participants would be given 1 hour to make something useful.
-<li>After 45 mins there will be a bell indicating that only 15 mins are left.
+<li>After 45 minutes there will be a bell indicating that only 15 minutes are left.
 <li>Participants need to explain the concepts of what they have made.
 <li>The Judges decision will be final and binding to all.
 
@@ -306,6 +313,7 @@ answer the audience / judges questions /interjections.</li>
 
   <h3>JUST A MINUTE</h3>
   <ul>
+    <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Participation can be only as an individual.
 <li>Each participant will be given 3 minutes to speak extempore on a theme picked up by him/her by draw
 of lots.
@@ -332,6 +340,7 @@ speaker to come up.
 <div class="item">
   <h3>ROBO RACE</h3>
   <ul>
+    <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Design a manually controlled ROBOT that has capacity to cover maximum distance in shortest
 possible time, challenging the hurdles and be one of the best opponents. <li>The maximum dimension of
 the robot can be 35 x 35 cm (I x b).
@@ -340,7 +349,7 @@ the robot can be 35 x 35 cm (I x b).
 remain slack during the complete run.
 <li>Max weight must not exceed 6 kg.
 <li>The power supply will be provided maximum up to 12Volt.
-<li>Readymade toys car are not allowed.
+<li>Ready made toys car are not allowed.
 <li>This is a racing event, so fastest and most balanced robot will win.
 <li>Each team can have maximum four (4) members.
 <li>Each member of the team must contain the identity card of the Institute.
@@ -364,6 +373,7 @@ remain slack during the complete run.
       <h3>ROBO WAR</h3>
 
       <ul>
+<li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li> Design and construct a remote controlled robot capable of fighting a one on one tournament.
 <li>A robot is declared victorious if its opponent is immobilized.
 <li>A robot will be declared immobile if it cannot display linear motion of at least one inch in a timed
@@ -372,7 +382,7 @@ demonstrate some degree of controlled movement. In case both the robots remain m
 of the round then the winner will be decided subjectively.
  <li>A robot that is deemed unsafe by the judges after the match has begun will be disqualified and therefore
 declared the loser. The match will be immediately halted and the opponent will be awarded a win.
-<li>If a robot is thrown out of the arena the match willstop immediately and the robot still inside the arena
+<li>If a robot is thrown out of the arena the match will stop immediately and the robot still inside the arena
 will automatically be declared as the winner.
  <li>Robots cannot win by pinning or lifting their opponents. Organizers will allow pinning or lifting for a
 maximum of 20 seconds per pin/lift then the attacker robot will be instructed to release the opponent. If,
@@ -397,6 +407,7 @@ The Judges decision will be final and binding to all.
         <h3> TECHNICAL POSTER</h3>
 
         <ul>
+<li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Participation can be as an individual or in a group of 2.
 Is Each poster should include a topic/title across the top.
 <li>The font Size should be at last 18 point, in bold printing to be seen easily.
@@ -460,6 +471,8 @@ Is Each poster should include a topic/title across the top.
   <script type="text/javascript" src="../js/jquery.particleground.js"></script>
 
   <script type="text/javascript" src="../js/sine-waves.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 
   <script type="text/javascript" src="../js/main.js"></script>
 
