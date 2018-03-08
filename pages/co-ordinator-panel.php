@@ -118,7 +118,7 @@
 
       </form>
 
-      <form action="" method="POST" style="margin-top: 50px;">
+      <form action="../resources/api.php?action=download_event_csv_all" method="POST" style="margin-top: 50px;">
 
       <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
 

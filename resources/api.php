@@ -25,7 +25,7 @@
 
     try {
 
-        require_once 'util/config.php';
+        require_once 'util/config1.php';
         require_once 'util/mail_util.php';
         
         function guid(){
@@ -74,80 +74,64 @@
             $clg = $_POST["clg_name"]; 
             $event_id = $_POST["event"] + 1;
             $teamSize = $_POST["no_of_participants"];  
-            
-
-            $name_1 = $_POST["name_1"];
-            $email_1 = $_POST["email_1"];
-            $roll_1 = (int)$_POST["roll_no_1"];
-            $mobile_1 = (int)$_POST["mob_no_1"];
-            
-            $name_2 = $_POST["name_2"];
-            $email_2 = $_POST["email_2"];
-            $roll_2 = (int)$_POST["roll_no_2"];
-            $mobile_2 = (int)$_POST["mob_no_2"];
-            
+            $cordinator = $_POST["co-ordinator_name"];
             $team = guid();
-
+            
+            $name = $_POST["name"];
+            $email = $_POST["email"];
+            $roll = $_POST["roll_no"];
+            $mobile = $_POST["mob_no"];
+            
             $err_form = "";
             $err_status = 0;
 
-            if($teamSize == 2){
-                if(!( validater($mobile_1,"int") && validater($mobile_1,"int") ) ){
-                    $err_form .= "invalid mobile <br/>";
+            if($clg == "" || $cordinator == "" ){
+                $err_status = 1;
+            }
+            $teamSize = 1;
+            for($i = 0; $i < $teamSize; $i++){
+                if(! validater((int)$mobile[$i],"int")  ){
                     $err_status = 1;
                 }
-                if(!(validater($roll_1,"int") && validater($roll_2,"int"))){
-                    $err_form .= "invalid roll number <br/>";
+                if(! validater((int)$roll[$i],"int")){
                     $err_status = 1;
                 }
-                if(!(validater($email_1,"email") && validater($email_2,"email") )){
-                    $err_form .= "invalid email <br/>";
+                if(! validater($email[$i],"email") ){
                     $err_status = 1;
                 }
-                if($name_1 == "" || $clg == "" || $email_1 == "" || $roll_1 == "" || $mobile_1 == "" ||
-                    $name_1 == "" ||  $email_1 == "" || $roll_1 == "" || $mobile_1 == ""){
-                    $err_form .= "Please fill all the details <br/>";
-                    $err_status = 1;
-                }
-            }else{
-                if(!( validater($mobile_1,"int")) ){
-                    $err_form .= "invalid mobile <br/>";
-                    $err_status = 1;
-                }
-                if(!(validater($roll_1,"int") )){
-                    $err_form .= "invalid roll number <br/>";
-                    $err_status = 1;
-                }
-                if(!(validater($email_1,"email") )){
-                    $err_form .= "invalid email <br/>";
-                    $err_status = 1;
-                }
-                if($name_1 == "" || $clg == "" || $email_1 == "" || $roll_1 == "" || $mobile_1 == "" ){
-                    $err_form .= "Please fill all the details <br/>";
+                if($name[$i] == "" || $email[$i] == "" || $roll[$i] == "" || $mobile[$i] == "" ){
                     $err_status = 1;
                 }
             }
+
             if($err_status){
                 $_SESSION["msg"]["type"] = "error";
                 $_SESSION["msg"]["head"] = "Registration Failed";
-                $_SESSION["msg"]["body"] = $err_form;
+                $_SESSION["msg"]["body"] = "Please Fill The Correct Details";
+                
                 $head = "Location: ../pages/registrations.php?session=" . $session_get;                     
                 header($head);
             }else{
                 $conn=connections();
                 
                 //check if user exists
-                if($teamSize == 2){
+                if($teamSize == 1){
                     $statement = executedStatement("SELECT email FROM Student WHERE
-                                                email='$email_1' OR email='$email_2' ");
-                    $result = $statement->Fetch(PDO::FETCH_ASSOC);
+                                                email='$email[0]' ");
+                }else if($teamSize == 2){
+                    $statement = executedStatement("SELECT email FROM Student WHERE
+                                                email='$email[0]' OR email='$email[1]' ");
                 
-                }else{
+                }else if($teamSize == 3){
                     $statement = executedStatement("SELECT email FROM Student WHERE
-                                                email='$email_1' ");
-                    $result = $statement->Fetch(PDO::FETCH_ASSOC);
+                                                email='$email[0]'  OR email='$email[1]' OR  email='$email[2]' ");
+                }else if($teamSize == 4){
+                    $statement = executedStatement("SELECT email FROM Student WHERE
+                                                email='$email[0]'  OR email='$email[1]'  OR email='$email[2]'  OR email='$email[3]' ");
                 }
-                
+
+                $result = $statement->Fetch(PDO::FETCH_ASSOC);
+
                 if($result){
                     
                     $_SESSION["msg"]["type"] = "error";
@@ -159,15 +143,8 @@
 
                 }else{
                     //fresh user
-                    if($teamSize == 2){
-                        $sql = "INSERT INTO Student VALUES ('$roll_1', '$name_1', '$email_1', '$mobile_1', '$clg', '$event_id', '$team')"; 
-                        $conn->exec($sql); 
-                        $sql = "INSERT INTO Student VALUES ('$roll_2', '$name_2', '$email_2', '$mobile_2', '$clg', '$event_id', '$team')"; 
-                        $conn->exec($sql);  
-                    
-
-                    }else{
-                        $sql = "INSERT INTO Student VALUES ('$roll_1', '$name_1', '$email_1', '$mobile_1', '$clg', '$event_id', '$team')"; 
+                    for($i = 0; $i < $teamSize; $i++){
+                        $sql = "INSERT INTO Student VALUES ('', '$roll[$i]', '$name[$i]', '$email[$i]', '$mobile[$i]', '$clg', '$cordinator' ,'$event_id', '$team')"; 
                         $conn->exec($sql); 
                     }
                     
@@ -181,36 +158,64 @@
             }
         }
 
-        function download_event_csv(){
+        function event_data($token, $types){
             global $session_get;
-            //for coordinators- enter their unique id and this function download their event participations
-            $token = $_POST["token"];
-            $statement = executedStatement("SELECT event, event_id  FROM Zonal_Event WHERE
-                                             token='$token' ");
-            $result = $statement->Fetch(PDO::FETCH_ASSOC);
-
-            if($result){
-                $event_id = $result["event_id"];
-                $event_name = $result["event"];
+            if($types == "admin"){
+                $statement = executedStatement("SELECT token  FROM Zonal_Event WHERE
+                                             token='$token' AND event = 'admin' ");
+                $result = $statement->Fetch(PDO::FETCH_ASSOC);
+                if($result){
+                    $statement = executedStatement("SELECT * FROM Student NATURAL JOIN Zonal_Event ORDER BY team DESC ");
+                    $result = $statement->FetchAll(PDO::FETCH_ASSOC);
                 
+                    $filepath = "downloads/aktu_zonal.csv";
                 
-                $statement = executedStatement("SELECT * FROM Student WHERE event_id = '$event_id' ORDER BY team DESC ");
-                //construct file
-                $filepath = "downloads/" . $event_id . ".csv";
-                $result = $statement->FetchAll(PDO::FETCH_ASSOC);
+                }
+            }else{
+                global $session_get;
+                //for coordinators- enter their unique id and this function download their event participations
+                $token = $_POST["token"];
+                $statement = executedStatement("SELECT event, event_id  FROM Zonal_Event WHERE
+                                                token='$token' ");
+                $result = $statement->Fetch(PDO::FETCH_ASSOC);
+                if($result){
+                    $event_id = $result["event_id"];
+                    $event_name = $result["event"];
+                    
+                    
+                    $statement = executedStatement("SELECT * FROM Student WHERE event_id = '$event_id' ORDER BY team DESC ");
+                    //construct file
+                    $filepath = "downloads/" . $event_id . ".csv";
+                    $result = $statement->FetchAll(PDO::FETCH_ASSOC);
+                }        
+            }
 
+            if($result && $types == "cordinator"){
                 $file = fopen($filepath,"w");
-
-                $arr[0] = ",," . $event_name  ;
+                $arr[0] = ",,," . $event_name  ;
                 $arr[1] = "";
-                $arr[2] = "Roll No, Name, College, Email, Mobile, Team"  ;
+                $arr[2] = "Sno ,Roll No, Name, College, Email, Mobile, Team"  ;
                 $arr[3] = "";
 
                 for($i=0; $i<sizeof($result); $i++ ){
-                    $line = "" . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
+                    $line = "". ($i + 1) . "," . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
                             ","  . $result[$i]["email"] .  ","  . $result[$i]["mobile"] .  ","  . "TID-" .$result[$i]["team"];
                     $arr[$i + 4] = $line;   
                 }
+            }else if($result && $types == "admin"){
+                $file = fopen($filepath,"w");
+                $arr[0] = ",,," . "AKTU ZONAL FEST 2K18"  ;
+                $arr[1] = "";
+                $arr[2] = "Sno,Event, Roll No, Name, College, Email, Mobile, Team"  ;
+                $arr[3] = "";
+
+                for($i=0; $i<sizeof($result); $i++ ){
+                    $line = "" . ($i + 1) . ","  . $result[$i]["event"]  .","  . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
+                            ","  . $result[$i]["email"] .  ","  . $result[$i]["mobile"] .  ","  . "TID-" .$result[$i]["team"];
+                    $arr[$i + 4] = $line;   
+                }
+            }
+            if($result){
                 foreach ($arr as $line){
                     fputcsv($file,explode(',',$line));
                 }
@@ -224,7 +229,6 @@
                 header('Content-Length: ' . filesize($filepath));
                 flush(); // Flush system output buffer
                 readfile($filepath);
-
             }else{
                 
                 $_SESSION["msg"]["type"] = "error";
@@ -234,22 +238,13 @@
                 $head = "Location: ../pages/co-ordinator-panel.php?session=" . $session_get;
                 header($head);
             }
-
         }
 
 
 
 
-
-
-
-
-
-
-
-
         //url resolving GET 
-        $possible_url = array("register", "download_event_csv");
+        $possible_url = array("register", "download_event_csv", "download_event_csv_all");
 
         $value = "An error has occurred";
 
@@ -262,7 +257,11 @@
                     break;
 
                 case "download_event_csv":
-                    download_event_csv();
+                    event_data($_POST["token"],"cordinator");
+                break;
+
+                case "download_event_csv_all":
+                    event_data($_POST["token"],"admin");
                 break;
 
                 default:    
