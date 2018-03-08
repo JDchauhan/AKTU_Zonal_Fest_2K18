@@ -71,12 +71,21 @@
              */
             global $session_get;
             
+            $clg_code = 123;
             $clg = $_POST["clg_name"]; 
             $event_id = $_POST["event"] + 1;
             $teamSize = $_POST["no_of_participants"];  
             $cordinator = $_POST["co-ordinator_name"];
+            $cordinator_email = "hdh2@dh.com";
+            $cordinator_mobile = 9953841590;
+
             $team = guid();
-            
+
+            $course[0] = "B.tech";
+            $branch[0] = "IT";
+            $year[0] = "3";
+            $teamSize =1;
+
             $name = $_POST["name"];
             $email = $_POST["email"];
             $roll = $_POST["roll_no"];
@@ -85,10 +94,17 @@
             $err_form = "";
             $err_status = 0;
 
-            if($clg == "" || $cordinator == "" ){
+            if( $clg_code == "" ||$clg == "" || $cordinator == "" || $cordinator_email == "" || $cordinator_mobile == ""){
                 $err_status = 1;
             }
-            $teamSize = 1;
+            if( validater((int)$cordinator_mobile,"int") && validater($cordinator_email,"email") ){
+                
+            }else{
+                $err_status = 1;
+            }
+            
+            
+
             for($i = 0; $i < $teamSize; $i++){
                 if(! validater((int)$mobile[$i],"int")  ){
                     $err_status = 1;
@@ -99,7 +115,8 @@
                 if(! validater($email[$i],"email") ){
                     $err_status = 1;
                 }
-                if($name[$i] == "" || $email[$i] == "" || $roll[$i] == "" || $mobile[$i] == "" ){
+                if($name[$i] == "" || $email[$i] == "" || $roll[$i] == "" || $mobile[$i] == "" || 
+                        $course[$i] == "" || $branch[$i] == "" || $year[$i] == "" ){
                     $err_status = 1;
                 }
             }
@@ -112,6 +129,14 @@
                 $head = "Location: ../pages/registrations.php?session=" . $session_get;                     
                 header($head);
             }else{
+
+                $_SESSION["clg_details"]["clg_code"] = $clg_code;
+                $_SESSION["clg_details"]["clg_name"] = $clg;
+                $_SESSION["clg_details"]["cord_name"] = $cordinator;
+                $_SESSION["clg_details"]["cord_email"] = $cordinator_email;
+                $_SESSION["clg_details"]["cord_mob"] = $cordinator_mobile;
+
+
                 $conn=connections();
                 
                 //check if user exists
@@ -144,14 +169,12 @@
                 }else{
                     //fresh user
                     for($i = 0; $i < $teamSize; $i++){
-                        $sql = "INSERT INTO Student VALUES ('', '$roll[$i]', '$name[$i]', '$email[$i]', '$mobile[$i]', '$clg', '$cordinator' ,'$event_id', '$team')"; 
+                        $sql = "INSERT INTO Student VALUES ('', '$roll[$i]', '$name[$i]', '$course[$i]', '$branch[$i]', '$year[$i]',
+                                  '$email[$i]' , '$mobile[$i]', '$clg_code' ,'$clg', '$cordinator' ,
+                                 '$cordinator_email', '$cordinator_mobile' ,'$event_id', '$team')"; 
                         $conn->exec($sql); 
                     }
-                    
-                    $_SESSION["msg"]["type"] = "success";
-                    $_SESSION["msg"]["head"] = "Registration Successfull";
-                    $_SESSION["msg"]["body"] = "Participants successfully Registered for this event";
-                    
+
                     $head = "Location: ../pages/registrations.php?session=" . $session_get;
                     header($head);   
                 }
@@ -183,7 +206,7 @@
                     $event_name = $result["event"];
                     
                     
-                    $statement = executedStatement("SELECT * FROM Student WHERE event_id = '$event_id' ORDER BY team DESC ");
+                    $statement = executedStatement("SELECT * FROM Student WHERE event_id = '$event_id' ORDER BY college ");
                     //construct file
                     $filepath = "downloads/" . $event_id . ".csv";
                     $result = $statement->FetchAll(PDO::FETCH_ASSOC);
@@ -192,26 +215,31 @@
 
             if($result && $types == "cordinator"){
                 $file = fopen($filepath,"w");
-                $arr[0] = ",,," . $event_name  ;
+                $arr[0] = ",,,," . $event_name  ;
                 $arr[1] = "";
-                $arr[2] = "Sno ,Roll No, Name, College, Email, Mobile, Team"  ;
+                $arr[2] = "Sno ,Roll No, Name, College, Course, Year, Branch, Email, Mobile, Team"  ;
                 $arr[3] = "";
 
                 for($i=0; $i<sizeof($result); $i++ ){
                     $line = "". ($i + 1) . "," . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
+                            "," . $result[$i]["course"] . "," . $result[$i]["year"] . "," . $result[$i]["branch"] . 
                             ","  . $result[$i]["email"] .  ","  . $result[$i]["mobile"] .  ","  . "TID-" .$result[$i]["team"];
                     $arr[$i + 4] = $line;   
                 }
             }else if($result && $types == "admin"){
                 $file = fopen($filepath,"w");
-                $arr[0] = ",,," . "AKTU ZONAL FEST 2K18"  ;
+                $arr[0] = ",,,,," . "AKTU ZONAL FEST 2K18"  ;
                 $arr[1] = "";
-                $arr[2] = "Sno,Event, Roll No, Name, College, Email, Mobile, Team"  ;
+                $arr[2] = "Sno,Event, Roll No, Name, College code, College, Course, Year, Branch, Email, Mobile, Cordinator, Cordinator Email, Cordinator Mobile, Team"  ;
                 $arr[3] = "";
 
                 for($i=0; $i<sizeof($result); $i++ ){
-                    $line = "" . ($i + 1) . ","  . $result[$i]["event"]  .","  . $result[$i]["roll"] . ","  . $result[$i]["name"] .  ","  . $result[$i]["college"] . 
-                            ","  . $result[$i]["email"] .  ","  . $result[$i]["mobile"] .  ","  . "TID-" .$result[$i]["team"];
+                    $line = ""  . ($i + 1) . ","  . $result[$i]["event"]  .","  . $result[$i]["roll"] . ","  . $result[$i]["name"] .
+                            "," . $result[$i]["college_code"] . "," . $result[$i]["college"] .
+                            "," . $result[$i]["course"] . "," . $result[$i]["year"] . "," . $result[$i]["branch"] . 
+                            "," . $result[$i]["email"] .  ","  . $result[$i]["mobile"] . "," . $result[$i]["cordinator_name"] .
+                            "," . $result[$i]["cordinator_email"] . "," . $result[$i]["cordinator_mobile"] . 
+                            "," . "TID-" .$result[$i]["team"];
                     $arr[$i + 4] = $line;   
                 }
             }

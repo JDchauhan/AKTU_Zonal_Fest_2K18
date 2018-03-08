@@ -121,8 +121,8 @@
           
     </div>
     <form name="reg-form" action="../resources/api.php?action=register&amp;session=<?php echo $session_get;?>" onsubmit="return validateForm()" method="POST" style="padding-bottom: 80px; max-width: 700px;margin: auto;">
-			<input type="text" name="clg_name" placeholder="College" class="txt-sml">
-			<input type="text" name="co-ordinator_name" placeholder="Cordinator Name" class="txt-sml">
+			<input type="text" name="clg_name" value='<?php if(isset($_SESSION["clg_details"])){ echo $_SESSION["clg_details"]["clg_name"]; };?>'  placeholder="College" class="txt-sml">
+			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
 			<br>
       <select name="event" class="select" id="event_name" onchange="hide_form()">
         <option value="0">BUISNESS PLAN</option>
