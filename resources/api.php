@@ -25,7 +25,7 @@
 
     try {
 
-        require_once 'util/config1.php';
+        require_once 'util/config.php';
         require_once 'util/mail_util.php';
         
         function guid(){
@@ -174,7 +174,15 @@
                                  '$cordinator_email', '$cordinator_mobile' ,'$event_id', '$team')"; 
                         $conn->exec($sql); 
                     }
-
+                    
+                    $events_all = $_SESSION["clg_details"]["events"];
+                    unset($events_all[$event_id-1]);
+                    $_SESSION["clg_details"]["events"] = $events_all;
+                    
+                    $_SESSION["msg"]["type"] = "success";
+                    $_SESSION["msg"]["head"] = "Registration Successfull";
+                    $_SESSION["msg"]["body"] = "Participants successfully Registered for this event";
+                    
                     $head = "Location: ../pages/registrations.php?session=" . $session_get;
                     header($head);   
                 }

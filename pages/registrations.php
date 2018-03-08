@@ -125,17 +125,30 @@
 			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
 			<br>
       <select name="event" class="select" id="event_name" onchange="hide_form()">
-        <option value="0">BUISNESS PLAN</option>
-        <option value="1">BRIDGE KIRTI</option>
-        <option value="2">CHECK YOUR KNOWLEDGE</option>
-        <option value="3">CODING CONTEST</option>
-        <option value="4">DEBATE</option>
-        <option value="5">FRUGAL ENGINEERING</option>
-        <option value="6">JUST A MINUTE</option>
-        <option value="7">ROBO RACE</option>
-        <option value="8">ROBO WAR</option>
-        <option value="9">TECHNICAL POSTER</option>
-      </select>
+				<?php
+					if(isset($_SESSION["clg_details"])){
+						
+					}else{
+						$_SESSION["clg_details"]["events"] = array(
+															"0"=>"BUSINESS PLAN",
+															"1"=>"BRIDGE KRITI",
+															"2"=>"CHECK YOUR KNOWLEDGE",
+															"3"=>"CODING CONTEST",
+															"4"=>"DEBATE",
+															"5"=>"FRUGAL ENGINEERING",
+															"6"=>"JUST A MINUTE",
+															"7"=>"ROBO RACE",
+															"8"=>"ROBO WAR",
+															"9"=>"TECHNICAL POSTER",
+													);
+					}
+					$events_rem = $_SESSION["clg_details"]["events"];
+					foreach($events_rem as $eve_id => $eve_name){
+						echo "<option value='". $eve_id ." '>" . $eve_name  ."</option>";
+					}
+
+				?>
+				</select>
       <select name="no_of_participants" class="select" onchange="disable()" id="select">
         <option value="2">Team Size = 2</option>
         <option value="1">Team Size = 1</option>
