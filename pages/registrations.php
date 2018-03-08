@@ -124,6 +124,9 @@
 			<input type="text" name="clg_name" value='<?php if(isset($_SESSION["clg_details"])){ echo $_SESSION["clg_details"]["clg_name"]; };?>'  placeholder="College" class="txt-sml">
 			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
 			<br>
+      <input type="text" name="co-ordinator_email" placeholder="Cordinator email" class="txt-sml">
+      <input type="text" name="co-ordinator_mob_no" placeholder="Cordinator Contact No." class="txt-sml">
+      <br>
       <select name="event" class="select" id="event_name" onchange="hide_form()">
 				<?php
 					if(isset($_SESSION["clg_details"])){
@@ -150,11 +153,11 @@
 				?>
 				</select>
       <select name="no_of_participants" class="select" onchange="disable()" id="select">
-        <option value="2">Team Size = 2</option>
         <option value="1">Team Size = 1</option>
+        <option value="2">Team Size = 2</option>
       </select>
 
-    <div class="row" style="height:200px; overflow-y:scroll;">
+    <div class="row" style="height:150px; overflow-y:scroll;">
     <div class="col-sm-6" id="form1">
     	<input type="text" name="name[0]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
     	<input type="text" name="email[0]" placeholder="Email" class="txt-sml"><br>
