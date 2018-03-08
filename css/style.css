@@ -148,15 +148,15 @@ html, body:hover
 {
 	float: left;
 	display: inline-block;
-	height: 100px;
-	margin-left: -120px;
+	height: 110px;
+	margin-left: -140px;
 	position: absolute;
 }
 .aktu2
 {
 	display: inline-block;
-	height: 100px;
-	margin-right: -80px;
+	height: 110px;
+	margin-right: -60px;
 	position: absolute;
 }
 .one

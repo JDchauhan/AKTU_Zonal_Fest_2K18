@@ -110,9 +110,6 @@ body
 	margin-top: 20px;
 	text-align: left;
 	display: inline-block;
-}
-.item
-{
 	max-height: 400px;
 	overflow-y: auto;
 }
