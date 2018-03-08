@@ -84,7 +84,6 @@
             $course[0] = "B.tech";
             $branch[0] = "IT";
             $year[0] = "3";
-            $teamSize =1;
 
             $name = $_POST["name"];
             $email = $_POST["email"];
