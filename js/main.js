@@ -221,7 +221,7 @@ function disable()
         form2.className="hidden";
         form1.className="";
         form1.className="col-sm-12";
-
+        
     }
     else if(select==2)
     {
