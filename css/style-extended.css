@@ -110,8 +110,11 @@ body
 	margin-top: 20px;
 	text-align: left;
 	display: inline-block;
-	max-height: 400px;
-	overflow-y: auto;
+}
+.event_overview
+{
+	height: 250px;
+    overflow-y: scroll;
 }
 .item ul li
 {

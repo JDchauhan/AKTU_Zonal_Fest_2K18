@@ -114,7 +114,7 @@ html, body:hover
 	background-color: transparent;
 	cursor: url(../images/cursor_2.cur), auto;
 	overflow-x: hidden;
-	overflow-y:scroll;
+	overflow-y:hidden;
 }
 .arc_reactor
 {
@@ -362,6 +362,7 @@ a.author:hover{
 	font-family: 'Poiret One', cursive;
 	color: white;
 	letter-spacing: 2px;
+	z-index:-3;
 }
 #waves 
 {   
@@ -746,7 +747,7 @@ a.author:hover{
 }
 .hidden
 {
-	visibility: hidden;
+	display: none;
 }
 .error
 {

@@ -90,7 +90,8 @@ function validateForm()
 {   
     var clg_name=document.forms["reg-form"]["clg_name"].value;
     var event=document.forms["reg-form"]["event"].value;
-    var name_1 = document.forms["reg-form"]["name_1"].value;
+    /*
+    var name_1 = document.forms["reg-form"]["name"][0].value;
     var email_1=document.forms["reg-form"]["email_1"].value;
     var roll_no_1=document.forms["reg-form"]["roll_no_1"].value;
     var mob_no_1=document.forms["reg-form"]["mob_no_1"].value;
@@ -99,6 +100,9 @@ function validateForm()
     var roll_no_2=document.forms["reg-form"]["roll_no_2"].value;
     var mob_no_2=document.forms["reg-form"]["mob_no_2"].value;
     var participants=document.forms["reg-form"]["no_of_participants"].value;
+    */
+
+
     if(participants==2)
     {
     if(clg_name== "")
@@ -209,7 +213,8 @@ function disable()
     var select=document.getElementById("select").value;
     var form2=document.getElementById("form2");
     var form1=document.getElementById("form1");
-    
+    var form3=document.getElementById("form3");
+    var form4=document.getElementById("form4");
     if (select==1) 
     {
         form2.className="";
@@ -226,4 +231,59 @@ function disable()
         form1.className="col-sm-6";
 
     }
+}
+function hide_form()
+{
+    var event=document.getElementById("event_name").value;
+    var selector=document.getElementById("select");
+    if( event==0||event==4||event==6)
+    {
+        form2.className="";
+        form2.className="hidden";
+        form3.className="";
+        form3.className="hidden";
+        form4.className="";
+        form4.className="hidden";
+        form1.className="";
+        form1.className="col-sm-12";
+        selector.className="hidden";
+    }
+    else if(event==1 || event==2 || event==3 ||event==9)
+    {
+        form2.className="";
+        form2.className="col-sm-6";
+        form1.className="";
+        form1.className="col-sm-6";
+        selector.className="select";
+        form3.className="";
+        form3.className="hidden";
+        form4.className="";
+        form4.className="hidden";
+    }
+    else if(event==5)
+    {
+        form2.className="";
+        form2.className="col-sm-6";
+        form1.className="";
+        form1.className="col-sm-6";
+        selector.className="select";
+        form3.className="";
+        form3.className="col-sm-12";
+        form4.className="";
+        form4.className="hidden";
+    }
+    else
+    {
+        form2.className="";
+        form2.className="col-sm-6";
+        form1.className="";
+        form1.className="col-sm-6";
+        selector.className="select";
+        form3.className="";
+        form3.className="col-sm-6";
+        form4.className="";
+        form4.className="col-sm-6";
+
+    }
+
 }

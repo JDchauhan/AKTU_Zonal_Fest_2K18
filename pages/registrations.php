@@ -54,6 +54,7 @@
   		}
 		}, 1000);
 	</script>
+	
   
   <style type="text/css">
     .txt-sml
@@ -120,14 +121,16 @@
           
     </div>
     <form name="reg-form" action="../resources/api.php?action=register&amp;session=<?php echo $session_get;?>" onsubmit="return validateForm()" method="POST" style="padding-bottom: 80px; max-width: 700px;margin: auto;">
-      <input type="text" name="clg_name" placeholder="College" class="txt-sml"><br>
-      <select name="event" class="select">
+			<input type="text" name="clg_name" placeholder="College" class="txt-sml">
+			<input type="text" name="co-ordinator_name" placeholder="Cordinator Name" class="txt-sml">
+			<br>
+      <select name="event" class="select" id="event_name" onchange="hide_form()">
         <option value="0">BUISNESS PLAN</option>
         <option value="1">BRIDGE KIRTI</option>
         <option value="2">CHECK YOUR KNOWLEDGE</option>
         <option value="3">CODING CONTEST</option>
         <option value="4">DEBATE</option>
-        <option value="5">fRUGAL ENGINEERING</option>
+        <option value="5">FRUGAL ENGINEERING</option>
         <option value="6">JUST A MINUTE</option>
         <option value="7">ROBO RACE</option>
         <option value="8">ROBO WAR</option>
@@ -138,18 +141,32 @@
         <option value="1">Team Size = 1</option>
       </select>
 
-    <div class="row">
+    <div class="row" style="height:200px; overflow-y:scroll;">
     <div class="col-sm-6" id="form1">
-    	<input type="text" name="name_1" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-    	<input type="text" name="email_1" placeholder="Email" class="txt-sml"><br>
-    	<input type="text" name="roll_no_1" placeholder="Roll Number" class="txt-sml"><br>
-    	<input type="text" name="mob_no_1" placeholder="Mobile Number" class="txt-sml"><br>
+    	<input type="text" name="name[0]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
+    	<input type="text" name="email[0]" placeholder="Email" class="txt-sml"><br>
+    	<input type="text" name="roll_no[0]" placeholder="Roll Number" class="txt-sml"><br>
+    	<input type="text" name="mob_no[0]" placeholder="Mobile Number" class="txt-sml"><br>
     </div>
     <div class="col-sm-6" id="form2">
-      <input type="text" name="name_2" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-      <input type="text" name="email_2" placeholder="Email" class="txt-sml"><br>
-      <input type="text" name="roll_no_2" placeholder="Roll Number" class="txt-sml"><br>
-      <input type="text" name="mob_no_2" placeholder="Mobile Number" class="txt-sml"><br>
+      <input type="text" name="name[1]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[1]" placeholder="Email" class="txt-sml"><br>
+      <input type="text" name="roll_no[1]" placeholder="Roll Number" class="txt-sml"><br>
+      <input type="text" name="mob_no[1]" placeholder="Mobile Number" class="txt-sml"><br>
+    </div>
+		
+		<div class="col-sm-6" id="form3">
+      <input type="text" name="name[2]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[2]" placeholder="Email" class="txt-sml"><br>
+      <input type="text" name="roll_no[2]" placeholder="Roll Number" class="txt-sml"><br>
+      <input type="text" name="mob_no[2]" placeholder="Mobile Number" class="txt-sml"><br>
+    </div>
+
+		<div class="col-sm-6" id="form4">
+      <input type="text" name="name[3]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[3]" placeholder="Email" class="txt-sml"><br>
+      <input type="text" name="roll_no[3]" placeholder="Roll Number" class="txt-sml"><br>
+      <input type="text" name="mob_no[3]" placeholder="Mobile Number" class="txt-sml"><br>
     </div>
     	
     </div>
@@ -192,6 +209,10 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
     <script type="text/javascript" src="../js/main.js"></script>
+
+		<script>
+			hide_form();
+		</script>
 
 	<?php 
 		if(isset($_SESSION["msg"])){
