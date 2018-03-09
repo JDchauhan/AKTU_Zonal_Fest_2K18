@@ -103,23 +103,35 @@ function validateForm()
     email[0] = document.forms["reg-form"]["email[0]"].value;
     roll_no[0] = document.forms["reg-form"]["roll_no[0]"].value;
     mob_no[0] = document.forms["reg-form"]["mob_no[0]"].value;
+    branch[0] = document.forms["reg-form"]["branch[0]"].value;
+    year[0] = document.forms["reg-form"]["year[0]"].value;
+    course[0] = document.forms["reg-form"]["course[0]"].value;
 
     name[1] = document.forms["reg-form"]["name[1]"].value;
     email[1] = document.forms["reg-form"]["email[1]"].value;
     roll_no[1] = document.forms["reg-form"]["roll_no[1]"].value;
     mob_no[1] = document.forms["reg-form"]["mob_no[1]"].value;
+    branch[1] = document.forms["reg-form"]["branch[1]"].value;
+    year[1] = document.forms["reg-form"]["year[1]"].value;
+    course[1] = document.forms["reg-form"]["course[1]"].value;
 
 
     name[2] = document.forms["reg-form"]["name[2]"].value;
     email[2] = document.forms["reg-form"]["email[2]"].value;
     roll_no[2] = document.forms["reg-form"]["roll_no[2]"].value;
     mob_no[2] = document.forms["reg-form"]["mob_no[2]"].value;
+    branch[2] = document.forms["reg-form"]["branch[2]"].value;
+    year[2] = document.forms["reg-form"]["year[2]"].value;
+    course[2] = document.forms["reg-form"]["course[2]"].value;
 
 
     name[3] = document.forms["reg-form"]["name[3]"].value;
     email[3] = document.forms["reg-form"]["email[3]"].value;
     roll_no[3] = document.forms["reg-form"]["roll_no[3]"].value;
     mob_no[3] = document.forms["reg-form"]["mob_no[3]"].value;
+    branch[3] = document.forms["reg-form"]["branch[3]"].value;
+    year[3] = document.forms["reg-form"]["year[3]"].value;
+    course[3] = document.forms["reg-form"]["course[3]"].value;
 
 
 
@@ -205,6 +217,27 @@ function validateForm()
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
             document.getElementById("message").innerHTML="PLEASE CORRECT MOBILE NUMBER";
+            return false;
+        }
+        else if(branch[i] == "")
+        {
+            document.getElementById("message").className="";
+            document.getElementById("message").className="error";
+            document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+            return false;
+        }
+        else if(year[i] == "")
+        {
+            document.getElementById("message").className="";
+            document.getElementById("message").className="error";
+            document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+            return false;
+        }
+        else if(course[i] == "")
+        {
+            document.getElementById("message").className="";
+            document.getElementById("message").className="error";
+            document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
             return false;
         }    
     }
