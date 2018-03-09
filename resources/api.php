@@ -76,19 +76,18 @@
             $event_id = $_POST["event"] + 1;
             $teamSize = $_POST["no_of_participants"];  
             $cordinator = $_POST["co-ordinator_name"];
-            $cordinator_email = "hdh2@dh.com";
-            $cordinator_mobile = 9953841590;
+            $cordinator_email = $_POST["co-ordinator_email"];
+            $cordinator_mobile = $_POST["co-ordinator_mob_no"];
 
             $team = guid();
-
-            $course[0] = "B.tech";
-            $branch[0] = "IT";
-            $year[0] = "3";
 
             $name = $_POST["name"];
             $email = $_POST["email"];
             $roll = $_POST["roll_no"];
             $mobile = $_POST["mob_no"];
+            $course = $_POST["mob_no"];
+            $branch = $_POST["branch"];
+            $year = $_POST["year"];
             
             $err_form = "";
             $err_status = 0;

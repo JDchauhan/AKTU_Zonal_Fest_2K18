@@ -163,12 +163,18 @@
     	<input type="text" name="email[0]" placeholder="Email" class="txt-sml"><br>
     	<input type="text" name="roll_no[0]" placeholder="Roll Number" class="txt-sml"><br>
     	<input type="text" name="mob_no[0]" placeholder="Mobile Number" class="txt-sml"><br>
+			<input type="text" name="branch[0]" placeholder="Branch" class="txt-sml"><br>
+			<input type="text" name="year[0]" placeholder="Year" class="txt-sml"><br>
+			<input type="text" name="course[0]" placeholder="Course" class="txt-sml"><br>
     </div>
     <div class="col-sm-6" id="form2">
       <input type="text" name="name[1]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
       <input type="text" name="email[1]" placeholder="Email" class="txt-sml"><br>
       <input type="text" name="roll_no[1]" placeholder="Roll Number" class="txt-sml"><br>
       <input type="text" name="mob_no[1]" placeholder="Mobile Number" class="txt-sml"><br>
+			<input type="text" name="branch[1]" placeholder="Branch" class="txt-sml"><br>
+			<input type="text" name="year[1]" placeholder="Year" class="txt-sml"><br>
+			<input type="text" name="course[1]" placeholder="Course" class="txt-sml"><br>
     </div>
 		
 		<div class="col-sm-6" id="form3">
@@ -176,6 +182,9 @@
       <input type="text" name="email[2]" placeholder="Email" class="txt-sml"><br>
       <input type="text" name="roll_no[2]" placeholder="Roll Number" class="txt-sml"><br>
       <input type="text" name="mob_no[2]" placeholder="Mobile Number" class="txt-sml"><br>
+			<input type="text" name="branch[2]" placeholder="Branch" class="txt-sml"><br>
+			<input type="text" name="year[2]" placeholder="Year" class="txt-sml"><br>
+			<input type="text" name="course[2]" placeholder="Course" class="txt-sml"><br>
     </div>
 
 		<div class="col-sm-6" id="form4">
@@ -183,6 +192,9 @@
       <input type="text" name="email[3]" placeholder="Email" class="txt-sml"><br>
       <input type="text" name="roll_no[3]" placeholder="Roll Number" class="txt-sml"><br>
       <input type="text" name="mob_no[3]" placeholder="Mobile Number" class="txt-sml"><br>
+			<input type="text" name="branch[3]" placeholder="Branch" class="txt-sml"><br>
+			<input type="text" name="year[3]" placeholder="Year" class="txt-sml"><br>
+			<input type="text" name="course[3]" placeholder="Course" class="txt-sml"><br>
     </div>
     	
     </div>
