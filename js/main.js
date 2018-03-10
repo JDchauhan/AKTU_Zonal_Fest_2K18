@@ -262,16 +262,43 @@ function disable()
         form2.className="hidden";
         form1.className="";
         form1.className="col-sm-12";
+        form3.className="hidden";
+        form4.className="hidden";
         
     }
     else if(select==2)
     {
         form2.className="";
-        form2.className="col-sm-6";
+        form2.className="col-sm-12";
         form1.className="";
-        form1.className="col-sm-6";
+        form1.className="col-sm-12";
+        form3.className="hidden";
+        form4.className="hidden";
+    }
+    else if (select==3) 
+    {
+        form2.className="";
+        form2.className="col-sm-12";
+        form1.className="";
+        form1.className="col-sm-12";
+        form3.className="";
+        form3.className="col-sm-12";
+        form4.className="hidden";
+    }
+    else if
+    {
+        form2.className="";
+        form2.className="col-sm-12";
+        form1.className="";
+        form1.className="col-sm-12";
+        form3.className="";
+        form3.className="col-sm-12";
+        form4.className="";
+        form4.className="col-sm-12";
 
     }
+
+
 }
 function hide_form()
 {
@@ -288,6 +315,7 @@ function hide_form()
         form1.className="";
         form1.className="col-sm-12";
         selector.className="hidden";
+        document.getElementById("option1").setAttribute("selected","selected");
         document.getElementById("option2").className="hidden";
         document.getElementById("option3").className="hidden";
         document.getElementById("option4").className="hidden";
@@ -303,6 +331,8 @@ function hide_form()
         form3.className="hidden";
         form4.className="";
         form4.className="hidden";
+        document.getElementById("option1").removeAttribute("selected","selected");
+        document.getElementById("option2").setAttribute("selected","selected");
         document.getElementById("option2").className="";
         document.getElementById("option3").className="hidden";
         document.getElementById("option4").className="hidden";
@@ -318,6 +348,8 @@ function hide_form()
         form3.className="col-sm-12";
         form4.className="";
         form4.className="hidden";
+        document.getElementById("option2").removeAttribute("selected","selected");
+        document.getElementById("option3").setAttribute("selected","selected");
         document.getElementById("option2").className="";
         document.getElementById("option3").className="";
         document.getElementById("option4").className="hidden";
@@ -333,6 +365,8 @@ function hide_form()
         form3.className="col-sm-12";
         form4.className="";
         form4.className="col-sm-12";
+        document.getElementById("option3").removeAttribute("selected","selected");
+        document.getElementById("option4").setAttribute("selected","selected");
         document.getElementById("option2").className="";
         document.getElementById("option3").className="";
         document.getElementById("option4").className="";
