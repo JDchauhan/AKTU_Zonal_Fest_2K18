@@ -133,7 +133,7 @@ function validateForm()
     course[3] = document.forms["reg-form"]["course[3]"].value;
     var event_name=document.getElementById("event_name").value;
     event_name = parseInt(event_name);
-    if(participants == "null" && event_name != "0"){
+    if(participants == "null" || event_name != "0"){
         document.getElementById("message").className="";
         document.getElementById("message").className="error";
         document.getElementById("message").innerHTML="PLEASE ENTER TEAM SIZE";
