@@ -285,7 +285,7 @@ function disable()
         form3.className="col-sm-12";
         form4.className="hidden";
     }
-    else if
+    else if(select==4)
     {
         form2.className="";
         form2.className="col-sm-12";
