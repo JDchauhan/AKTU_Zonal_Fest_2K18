@@ -54,6 +54,7 @@
   		}
 		}, 1000);
 	</script>
+	
   
   <style type="text/css">
     .txt-sml
@@ -96,13 +97,13 @@
 
     <img src="../images/niet.png" class="aktu2">
     <h5 class="subhead-expanded">
-      Accredited by NAAC (A Grade) CSE, ECE, ME, &amp; B.Pharm are NBA accredited 99th Rank by NIRF (2016)
+      Accredited by NAAC (A Grade) | CSE, ECE, ME, &amp; B.Pharm are NBA accredited | 99th Rank by NIRF (2016)
     </h5>
     <h1 class="head-compressed">NIET, GR. NOIDA</h1>
 		<center><div class="line_2"></div></center>
-    <div class="navigator">
-    	REGISTRATIONS
-    </div>
+     <h3 class="head-expanded">Dr. APJ ABDUL KALAM TECHNICAL UNIVERSITY</h3>
+
+      <h3 class="head-compressed">AKTU ZONAL FEST</h3>
     <center><div class="line_2"></div></center>  
     <div class="menu-2">
         <a href="../index.php">HOME | </a>
@@ -120,36 +121,81 @@
           
     </div>
     <form name="reg-form" action="../resources/api.php?action=register&amp;session=<?php echo $session_get;?>" onsubmit="return validateForm()" method="POST" style="padding-bottom: 80px; max-width: 700px;margin: auto;">
-      <input type="text" name="clg_name" placeholder="College" class="txt-sml"><br>
-      <select name="event" class="select">
-        <option value="0">BUISNESS PLAN</option>
-        <option value="1">BRIDGE KIRTI</option>
-        <option value="2">CHECK YOUR KNOWLEDGE</option>
-        <option value="3">CODING CONTEST</option>
-        <option value="4">DEBATE</option>
-        <option value="5">fRUGAL ENGINEERING</option>
-        <option value="6">JUST A MINUTE</option>
-        <option value="7">ROBO RACE</option>
-        <option value="8">ROBO WAR</option>
-        <option value="9">TECHNICAL POSTER</option>
-      </select>
+			<input type="text" name="clg_name" value='<?php if(isset($_SESSION["clg_details"]["clg_name"])){ echo $_SESSION["clg_details"]["clg_name"]; };?>'  placeholder="College" class="txt-sml">
+			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"]["cord_name"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
+			<br>
+      <input type="text" name="co-ordinator_email" placeholder="Cordinator email" class="txt-sml">
+      <input type="text" name="co-ordinator_mob_no" placeholder="Cordinator Contact No." class="txt-sml">
+      <br>
+      <select name="event" class="select" id="event_name" onchange="hide_form()">
+				<?php
+					if(isset($_SESSION["clg_details"])){
+						
+					}else{
+						$_SESSION["clg_details"]["events"] = array(
+															"0"=>"BUSINESS PLAN",
+															"1"=>"BRIDGE KRITI",
+															"2"=>"CHECK YOUR KNOWLEDGE",
+															"3"=>"CODING CONTEST",
+															"4"=>"DEBATE",
+															"5"=>"FRUGAL ENGINEERING",
+															"6"=>"JUST A MINUTE",
+															"7"=>"ROBO RACE",
+															"8"=>"ROBO WAR",
+															"9"=>"TECHNICAL POSTER",
+													);
+					}
+					$events_rem = $_SESSION["clg_details"]["events"];
+					foreach($events_rem as $eve_id => $eve_name){
+						echo "<option value='". $eve_id ." '>" . $eve_name  ."</option>";
+					}
+
+				?>
+				</select>
       <select name="no_of_participants" class="select" onchange="disable()" id="select">
+			<option value="null">-- Select Team Size--</option>
+				<option value="1">Team Size = 1</option>
         <option value="2">Team Size = 2</option>
-        <option value="1">Team Size = 1</option>
       </select>
 
-    <div class="row">
+    <div class="row" style="height:150px; overflow-y:scroll;">
     <div class="col-sm-6" id="form1">
-    	<input type="text" name="name_1" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-    	<input type="text" name="email_1" placeholder="Email" class="txt-sml"><br>
-    	<input type="text" name="roll_no_1" placeholder="Roll Number" class="txt-sml"><br>
-    	<input type="text" name="mob_no_1" placeholder="Mobile Number" class="txt-sml"><br>
+    	<input type="text" name="name[0]" placeholder="Name 1" class="txt-sml" style="margin-top: 10px;"><br>
+    	<input type="text" name="email[0]" placeholder="Email 1" class="txt-sml"><br>
+    	<input type="text" name="roll_no[0]" placeholder="Roll Number 1" class="txt-sml"><br>
+    	<input type="text" name="mob_no[0]" placeholder="Mobile Number 1" class="txt-sml"><br>
+			<input type="text" name="branch[0]" placeholder="Branch 1" class="txt-sml"><br>
+			<input type="text" name="year[0]" placeholder="Year 1" class="txt-sml"><br>
+			<input type="text" name="course[0]" placeholder="Course 1" class="txt-sml"><br>
     </div>
     <div class="col-sm-6" id="form2">
-      <input type="text" name="name_2" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-      <input type="text" name="email_2" placeholder="Email" class="txt-sml"><br>
-      <input type="text" name="roll_no_2" placeholder="Roll Number" class="txt-sml"><br>
-      <input type="text" name="mob_no_2" placeholder="Mobile Number" class="txt-sml"><br>
+      <input type="text" name="name[1]" placeholder="Name 2" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[1]" placeholder="Email 2" class="txt-sml"><br>
+      <input type="text" name="roll_no[1]" placeholder="Roll Number 2" class="txt-sml"><br>
+      <input type="text" name="mob_no[1]" placeholder="Mobile Number 2" class="txt-sml"><br>
+			<input type="text" name="branch[1]" placeholder="Branch 2" class="txt-sml"><br>
+			<input type="text" name="year[1]" placeholder="Year 2" class="txt-sml"><br>
+			<input type="text" name="course[1]" placeholder="Course 2" class="txt-sml"><br>
+    </div>
+		
+		<div class="col-sm-6" id="form3">
+      <input type="text" name="name[2]" placeholder="Name 3" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[2]" placeholder="Email 3" class="txt-sml"><br>
+      <input type="text" name="roll_no[2]" placeholder="Roll Number 3" class="txt-sml"><br>
+      <input type="text" name="mob_no[2]" placeholder="Mobile Number 3" class="txt-sml"><br>
+			<input type="text" name="branch[2]" placeholder="Branch 3" class="txt-sml"><br>
+			<input type="text" name="year[2]" placeholder="Year 3" class="txt-sml"><br>
+			<input type="text" name="course[2]" placeholder="Course 3" class="txt-sml"><br>
+    </div>
+
+		<div class="col-sm-6" id="form4">
+      <input type="text" name="name[3]" placeholder="Name 4" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[3]" placeholder="Email 4" class="txt-sml"><br>
+      <input type="text" name="roll_no[3]" placeholder="Roll Number 4" class="txt-sml"><br>
+      <input type="text" name="mob_no[3]" placeholder="Mobile Number 4" class="txt-sml"><br>
+			<input type="text" name="branch[3]" placeholder="Branch 4" class="txt-sml"><br>
+			<input type="text" name="year[3]" placeholder="Year 4" class="txt-sml"><br>
+			<input type="text" name="course[3]" placeholder="Course 4" class="txt-sml"><br>
     </div>
     	
     </div>
@@ -192,6 +238,10 @@
     <link href="https://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet">
 
     <script type="text/javascript" src="../js/main.js"></script>
+
+		<script>
+			hide_form();
+		</script>
 
 	<?php 
 		if(isset($_SESSION["msg"])){

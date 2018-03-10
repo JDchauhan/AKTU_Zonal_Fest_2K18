@@ -88,7 +88,7 @@
 
     <img src="../images/niet.png" class="aktu2">
     <h5 class="subhead-expanded">
-      Accredited by NAAC (A Grade) CSE, ECE, ME, &amp; B.Pharm are NBA accredited 99th Rank by NIRF (2016)
+      Accredited by NAAC (A Grade) | CSE, ECE, ME, &amp; B.Pharm are NBA accredited | 99th Rank by NIRF (2016)
     </h5>
     <h1 class="head-compressed">NIET, GR. NOIDA</h1>
     <center><div class="line_2"></div></center>
@@ -98,9 +98,6 @@
         <a href="registrations.php">REGISTRATIONS | </a>
         <a href="devpage.php">DEV PAGE  </a>
         
-    </div>
-    <div class="navigator">
-    	CONSOLE
     </div>
     
     <center><div class="line_2"></div></center>  
@@ -121,7 +118,13 @@
 
       </form>
 
+      <form action="../resources/api.php?action=download_event_csv_all" method="POST" style="margin-top: 50px;">
 
+      <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
+
+      <input type="submit" name="submit" placeholder="Download All Data" value="Download All Data" class="btn-sml" style="width: auto;">
+
+      </form>
         <div class="footer">
     <div class="line_3"></div>
       Designed And Developed By 
