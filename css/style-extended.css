@@ -172,3 +172,25 @@ body
 	color: white;
 	margin-left: 10px;
 }
+.match_table
+{
+	margin: auto;
+	width: 800px;
+	height:250px;
+	overflow-y: scroll;
+	color: white;
+}
+.match_table table
+{
+	border: 1px solid white;
+	padding: 10px;
+	width: 100%;
+}
+.match_table table tr
+{
+	padding: 10px;
+}
+.match_table table tr td
+{
+	padding: 10px;
+}

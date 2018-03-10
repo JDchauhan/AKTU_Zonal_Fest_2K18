@@ -124,8 +124,8 @@
 			<input type="text" name="clg_name" value='<?php if(isset($_SESSION["clg_details"]["clg_name"])){ echo $_SESSION["clg_details"]["clg_name"]; };?>'  placeholder="College" class="txt-sml">
 			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"]["cord_name"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
 			<br>
-      <input type="text" name="co-ordinator_email" placeholder="Cordinator email" class="txt-sml">
-      <input type="text" name="co-ordinator_mob_no" placeholder="Cordinator Contact No." class="txt-sml">
+      <input type="text" name="co-ordinator_email" value='<?php if(isset($_SESSION["clg_details"]["cord_email"])){ echo $_SESSION["clg_details"]["cord_email"]; };?>' placeholder="Cordinator email" class="txt-sml">
+      <input type="text" name="co-ordinator_mob_no" value='<?php if(isset($_SESSION["clg_details"]["cord_mob"])){ echo $_SESSION["clg_details"]["cord_mob"]; };?>' placeholder="Cordinator Contact No." class="txt-sml">
       <br>
       <select name="event" class="select" id="event_name" onchange="hide_form()">
 				<?php
@@ -137,12 +137,13 @@
 															"1"=>"BRIDGE KRITI",
 															"2"=>"CHECK YOUR KNOWLEDGE",
 															"3"=>"CODING CONTEST",
-															"4"=>"DEBATE",
+															"4"=>"DEBATE ENGLISH",
 															"5"=>"FRUGAL ENGINEERING",
 															"6"=>"JUST A MINUTE",
 															"7"=>"ROBO RACE",
 															"8"=>"ROBO WAR",
 															"9"=>"TECHNICAL POSTER",
+															"10"=>"DEBATE HINDI"
 													);
 					}
 					$events_rem = $_SESSION["clg_details"]["events"];
@@ -153,13 +154,16 @@
 				?>
 				</select>
       <select name="no_of_participants" class="select" onchange="disable()" id="select">
-			<option value="null">-- Select Team Size--</option>
-				<option value="1">Team Size = 1</option>
-        <option value="2">Team Size = 2</option>
+		<option value="null">-- Select Team Size--</option>
+		<option value="1" id="option1">Team Size = 1</option>
+        <option value="2" id="option2">Team Size = 2</option>
+        <option value="3" id="option3">Team Size = 3</option>
+        <option value="4" id="option4">Team Size = 4</option>
       </select>
 
     <div class="row" style="height:150px; overflow-y:scroll;">
-    <div class="col-sm-6" id="form1">
+    <div class="col-sm-12" id="form1">
+
     	<input type="text" name="name[0]" placeholder="Name 1" class="txt-sml" style="margin-top: 10px;"><br>
     	<input type="text" name="email[0]" placeholder="Email 1" class="txt-sml"><br>
     	<input type="text" name="roll_no[0]" placeholder="Roll Number 1" class="txt-sml"><br>
@@ -168,7 +172,7 @@
 			<input type="text" name="year[0]" placeholder="Year 1" class="txt-sml"><br>
 			<input type="text" name="course[0]" placeholder="Course 1" class="txt-sml"><br>
     </div>
-    <div class="col-sm-6" id="form2">
+    <div class="col-sm-12" id="form2">
       <input type="text" name="name[1]" placeholder="Name 2" class="txt-sml" style="margin-top: 10px;"><br>
       <input type="text" name="email[1]" placeholder="Email 2" class="txt-sml"><br>
       <input type="text" name="roll_no[1]" placeholder="Roll Number 2" class="txt-sml"><br>
@@ -178,7 +182,7 @@
 			<input type="text" name="course[1]" placeholder="Course 2" class="txt-sml"><br>
     </div>
 		
-		<div class="col-sm-6" id="form3">
+		<div class="col-sm-12" id="form3">
       <input type="text" name="name[2]" placeholder="Name 3" class="txt-sml" style="margin-top: 10px;"><br>
       <input type="text" name="email[2]" placeholder="Email 3" class="txt-sml"><br>
       <input type="text" name="roll_no[2]" placeholder="Roll Number 3" class="txt-sml"><br>
@@ -188,7 +192,7 @@
 			<input type="text" name="course[2]" placeholder="Course 3" class="txt-sml"><br>
     </div>
 
-		<div class="col-sm-6" id="form4">
+		<div class="col-sm-12" id="form4">
       <input type="text" name="name[3]" placeholder="Name 4" class="txt-sml" style="margin-top: 10px;"><br>
       <input type="text" name="email[3]" placeholder="Email 4" class="txt-sml"><br>
       <input type="text" name="roll_no[3]" placeholder="Roll Number 4" class="txt-sml"><br>
