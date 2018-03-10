@@ -25,7 +25,7 @@
 
     try {
 
-        require_once 'util/config.php';
+        require_once 'util/config1.php';
         require_once 'util/mail_util.php';
         
         function guid(){
@@ -169,7 +169,7 @@
                     for($i = 0; $i < $teamSize; $i++){
                         $sql = "INSERT INTO Student VALUES ('', '$roll[$i]', '$name[$i]', '$course[$i]', '$branch[$i]', '$year[$i]',
                                   '$email[$i]' , '$mobile[$i]', '$clg_code' ,'$clg', '$cordinator' ,
-                                 '$cordinator_email', '$cordinator_mobile' ,'$event_id', '$team')"; 
+                                 '$cordinator_email', '$cordinator_mobile' ,'$event_id', '$team','1')"; 
                         $conn->exec($sql); 
                     }
                     

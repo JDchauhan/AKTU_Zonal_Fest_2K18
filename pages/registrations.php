@@ -124,8 +124,8 @@
 			<input type="text" name="clg_name" value='<?php if(isset($_SESSION["clg_details"]["clg_name"])){ echo $_SESSION["clg_details"]["clg_name"]; };?>'  placeholder="College" class="txt-sml">
 			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"]["cord_name"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
 			<br>
-      <input type="text" name="co-ordinator_email" placeholder="Cordinator email" class="txt-sml">
-      <input type="text" name="co-ordinator_mob_no" placeholder="Cordinator Contact No." class="txt-sml">
+      <input type="text" name="co-ordinator_email" value='<?php if(isset($_SESSION["clg_details"]["cord_email"])){ echo $_SESSION["clg_details"]["cord_email"]; };?>' placeholder="Cordinator email" class="txt-sml">
+      <input type="text" name="co-ordinator_mob_no" value='<?php if(isset($_SESSION["clg_details"]["cord_mob"])){ echo $_SESSION["clg_details"]["cord_mob"]; };?>' placeholder="Cordinator Contact No." class="txt-sml">
       <br>
       <select name="event" class="select" id="event_name" onchange="hide_form()">
 				<?php
