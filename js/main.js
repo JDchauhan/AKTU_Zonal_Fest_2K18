@@ -96,7 +96,6 @@ function validateForm()
     
     var event=document.forms["reg-form"]["event"].value;
     var participants=document.forms["reg-form"]["no_of_participants"].value;
-    participants = 1;
     
     var name = [], email= [], mob_no= [], roll_no=[],branch = [], year =[], course= [];
     name[0] = document.forms["reg-form"]["name[0]"].value;
@@ -132,8 +131,14 @@ function validateForm()
     branch[3] = document.forms["reg-form"]["branch[3]"].value;
     year[3] = document.forms["reg-form"]["year[3]"].value;
     course[3] = document.forms["reg-form"]["course[3]"].value;
-
-
+    var event_name=document.getElementById("event_name").value;
+    event_name = parseInt(event_name);
+    if(participants == "null" && event_name != "0"){
+        document.getElementById("message").className="";
+        document.getElementById("message").className="error";
+        document.getElementById("message").innerHTML="PLEASE ENTER TEAM SIZE";
+        return false;
+    }
 
     if(clg_name == ""){
         document.getElementById("message").className="";

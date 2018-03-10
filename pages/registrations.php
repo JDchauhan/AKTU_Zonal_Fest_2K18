@@ -153,48 +153,49 @@
 				?>
 				</select>
       <select name="no_of_participants" class="select" onchange="disable()" id="select">
-        <option value="1">Team Size = 1</option>
+			<option value="null">-- Select Team Size--</option>
+				<option value="1">Team Size = 1</option>
         <option value="2">Team Size = 2</option>
       </select>
 
     <div class="row" style="height:150px; overflow-y:scroll;">
     <div class="col-sm-6" id="form1">
-    	<input type="text" name="name[0]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-    	<input type="text" name="email[0]" placeholder="Email" class="txt-sml"><br>
-    	<input type="text" name="roll_no[0]" placeholder="Roll Number" class="txt-sml"><br>
-    	<input type="text" name="mob_no[0]" placeholder="Mobile Number" class="txt-sml"><br>
-			<input type="text" name="branch[0]" placeholder="Branch" class="txt-sml"><br>
-			<input type="text" name="year[0]" placeholder="Year" class="txt-sml"><br>
-			<input type="text" name="course[0]" placeholder="Course" class="txt-sml"><br>
+    	<input type="text" name="name[0]" placeholder="Name 1" class="txt-sml" style="margin-top: 10px;"><br>
+    	<input type="text" name="email[0]" placeholder="Email 1" class="txt-sml"><br>
+    	<input type="text" name="roll_no[0]" placeholder="Roll Number 1" class="txt-sml"><br>
+    	<input type="text" name="mob_no[0]" placeholder="Mobile Number 1" class="txt-sml"><br>
+			<input type="text" name="branch[0]" placeholder="Branch 1" class="txt-sml"><br>
+			<input type="text" name="year[0]" placeholder="Year 1" class="txt-sml"><br>
+			<input type="text" name="course[0]" placeholder="Course 1" class="txt-sml"><br>
     </div>
     <div class="col-sm-6" id="form2">
-      <input type="text" name="name[1]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-      <input type="text" name="email[1]" placeholder="Email" class="txt-sml"><br>
-      <input type="text" name="roll_no[1]" placeholder="Roll Number" class="txt-sml"><br>
-      <input type="text" name="mob_no[1]" placeholder="Mobile Number" class="txt-sml"><br>
-			<input type="text" name="branch[1]" placeholder="Branch" class="txt-sml"><br>
-			<input type="text" name="year[1]" placeholder="Year" class="txt-sml"><br>
-			<input type="text" name="course[1]" placeholder="Course" class="txt-sml"><br>
+      <input type="text" name="name[1]" placeholder="Name 2" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[1]" placeholder="Email 2" class="txt-sml"><br>
+      <input type="text" name="roll_no[1]" placeholder="Roll Number 2" class="txt-sml"><br>
+      <input type="text" name="mob_no[1]" placeholder="Mobile Number 2" class="txt-sml"><br>
+			<input type="text" name="branch[1]" placeholder="Branch 2" class="txt-sml"><br>
+			<input type="text" name="year[1]" placeholder="Year 2" class="txt-sml"><br>
+			<input type="text" name="course[1]" placeholder="Course 2" class="txt-sml"><br>
     </div>
 		
 		<div class="col-sm-6" id="form3">
-      <input type="text" name="name[2]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-      <input type="text" name="email[2]" placeholder="Email" class="txt-sml"><br>
-      <input type="text" name="roll_no[2]" placeholder="Roll Number" class="txt-sml"><br>
-      <input type="text" name="mob_no[2]" placeholder="Mobile Number" class="txt-sml"><br>
-			<input type="text" name="branch[2]" placeholder="Branch" class="txt-sml"><br>
-			<input type="text" name="year[2]" placeholder="Year" class="txt-sml"><br>
-			<input type="text" name="course[2]" placeholder="Course" class="txt-sml"><br>
+      <input type="text" name="name[2]" placeholder="Name 3" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[2]" placeholder="Email 3" class="txt-sml"><br>
+      <input type="text" name="roll_no[2]" placeholder="Roll Number 3" class="txt-sml"><br>
+      <input type="text" name="mob_no[2]" placeholder="Mobile Number 3" class="txt-sml"><br>
+			<input type="text" name="branch[2]" placeholder="Branch 3" class="txt-sml"><br>
+			<input type="text" name="year[2]" placeholder="Year 3" class="txt-sml"><br>
+			<input type="text" name="course[2]" placeholder="Course 3" class="txt-sml"><br>
     </div>
 
 		<div class="col-sm-6" id="form4">
-      <input type="text" name="name[3]" placeholder="Name" class="txt-sml" style="margin-top: 10px;"><br>
-      <input type="text" name="email[3]" placeholder="Email" class="txt-sml"><br>
-      <input type="text" name="roll_no[3]" placeholder="Roll Number" class="txt-sml"><br>
-      <input type="text" name="mob_no[3]" placeholder="Mobile Number" class="txt-sml"><br>
-			<input type="text" name="branch[3]" placeholder="Branch" class="txt-sml"><br>
-			<input type="text" name="year[3]" placeholder="Year" class="txt-sml"><br>
-			<input type="text" name="course[3]" placeholder="Course" class="txt-sml"><br>
+      <input type="text" name="name[3]" placeholder="Name 4" class="txt-sml" style="margin-top: 10px;"><br>
+      <input type="text" name="email[3]" placeholder="Email 4" class="txt-sml"><br>
+      <input type="text" name="roll_no[3]" placeholder="Roll Number 4" class="txt-sml"><br>
+      <input type="text" name="mob_no[3]" placeholder="Mobile Number 4" class="txt-sml"><br>
+			<input type="text" name="branch[3]" placeholder="Branch 4" class="txt-sml"><br>
+			<input type="text" name="year[3]" placeholder="Year 4" class="txt-sml"><br>
+			<input type="text" name="course[3]" placeholder="Course 4" class="txt-sml"><br>
     </div>
     	
     </div>
