@@ -98,7 +98,7 @@ function validateForm()
     var participants=document.forms["reg-form"]["no_of_participants"].value;
     participants = 1;
     
-    var name = [], email= [], mob_no= [], roll_no=[];
+    var name = [], email= [], mob_no= [], roll_no=[],branch = [], year =[], course= [];
     name[0] = document.forms["reg-form"]["name[0]"].value;
     email[0] = document.forms["reg-form"]["email[0]"].value;
     roll_no[0] = document.forms["reg-form"]["roll_no[0]"].value;
@@ -223,21 +223,21 @@ function validateForm()
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+            document.getElementById("message").innerHTML="PLEASE ENTER YOUR BRANCH";
             return false;
         }
         else if(year[i] == "")
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+            document.getElementById("message").innerHTML="PLEASE ENTER YOUR YEAR";
             return false;
         }
         else if(course[i] == "")
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE ENTER YOUR EMAIL";
+            document.getElementById("message").innerHTML="PLEASE ENTER YOUR COURSE";
             return false;
         }    
     }
