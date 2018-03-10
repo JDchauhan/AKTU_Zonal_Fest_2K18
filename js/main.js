@@ -276,7 +276,7 @@ function hide_form()
 {
     var event=document.getElementById("event_name").value;
     var selector=document.getElementById("select");
-    if( event==0||event==4||event==6)
+    if(event==4||event==6 || event== 10)
     {
         form2.className="";
         form2.className="hidden";
@@ -287,42 +287,54 @@ function hide_form()
         form1.className="";
         form1.className="col-sm-12";
         selector.className="hidden";
+        document.getElementById("option2").className="hidden";
+        document.getElementById("option3").className="hidden";
+        document.getElementById("option4").className="hidden";
     }
-    else if(event==1 || event==2 || event==3 ||event==9)
+    else if(event==0 ||event==1 || event==2 || event==3 ||event==9)
     {
         form2.className="";
-        form2.className="col-sm-6";
+        form2.className="col-sm-12";
         form1.className="";
-        form1.className="col-sm-6";
+        form1.className="col-sm-12";
         selector.className="select";
         form3.className="";
         form3.className="hidden";
         form4.className="";
         form4.className="hidden";
+        document.getElementById("option2").className="";
+        document.getElementById("option3").className="hidden";
+        document.getElementById("option4").className="hidden";
     }
     else if(event==5)
     {
         form2.className="";
-        form2.className="col-sm-6";
+        form2.className="col-sm-12";
         form1.className="";
-        form1.className="col-sm-6";
+        form1.className="col-sm-12";
         selector.className="select";
         form3.className="";
         form3.className="col-sm-12";
         form4.className="";
         form4.className="hidden";
+        document.getElementById("option2").className="";
+        document.getElementById("option3").className="";
+        document.getElementById("option4").className="hidden";
     }
     else
     {
         form2.className="";
-        form2.className="col-sm-6";
+        form2.className="col-sm-12";
         form1.className="";
-        form1.className="col-sm-6";
+        form1.className="col-sm-12";
         selector.className="select";
         form3.className="";
-        form3.className="col-sm-6";
+        form3.className="col-sm-12";
         form4.className="";
-        form4.className="col-sm-6";
+        form4.className="col-sm-12";
+        document.getElementById("option2").className="";
+        document.getElementById("option3").className="";
+        document.getElementById("option4").className="";
 
     }
 
