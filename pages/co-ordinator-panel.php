@@ -126,7 +126,7 @@
 
       </form>
       <br><br>
-      <center><div class="match_table">
+      <!--<center><div class="match_table">
         <form action="" method="POST">
         <table border="1">
           <tr style="text-align: center;">
@@ -213,7 +213,7 @@
 
         <input type="submit" name="submit" value="Submit" class="btn-sml" style="width: auto;color: black">
       </form>
-      </div></center>
+      </div></center>-->
 
 
         <div class="footer">
