@@ -110,7 +110,7 @@
           
     </div>
 
-      <form action="../resources/api.php?action=download_event_csv" method="POST" style="margin-top: 50px;">
+      <form action="../resources/api.php?action=download_event_csv" method="POST" style="margin-top: 50px; display: inline-block;">
 
       <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
 
@@ -118,13 +118,104 @@
 
       </form>
 
-      <form action="../resources/api.php?action=download_event_csv_all" method="POST" style="margin-top: 50px;">
+      <form action="../resources/api.php?action=download_event_csv_all" method="POST" style="margin-top: 50px; display: inline-block;">
 
       <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
 
       <input type="submit" name="submit" placeholder="Download All Data" value="Download All Data" class="btn-sml" style="width: auto;">
 
       </form>
+      <br><br>
+      <center><div class="match_table">
+        <form action="" method="POST">
+        <table border="1">
+          <tr style="text-align: center;">
+            <td></td>
+            <td><b>COLLEGE</b></td>
+            <td><b>Student name</b></td>
+            <td><b>Event</b></td>
+            <td><b>Roll NO</b></td>
+            <td><b>Sr. NO</b></td>
+          </tr>
+
+          
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" name="check"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+
+        <input type="submit" name="submit" value="Submit" class="btn-sml" style="width: auto;color: black">
+      </form>
+      </div></center>
+
+
         <div class="footer">
     <div class="line_3"></div>
       Designed And Developed By 
