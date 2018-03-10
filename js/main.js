@@ -303,7 +303,7 @@ function hide_form()
 {
     var event=document.getElementById("event_name").value;
     var selector=document.getElementById("select");
-    if(event==4||event==6 || event== 10)
+    if(event==6 )
     {
         form2.className="";
         form2.className="hidden";
@@ -319,7 +319,7 @@ function hide_form()
         document.getElementById("option3").className="hidden";
         document.getElementById("option4").className="hidden";
     }
-    else if(event==0 ||event==1 || event==2 || event==3 ||event==9)
+    else if(event==0 ||event==1 || event==2 || event==3 ||event==4|| event==9 || event== 10 )
     {
         form2.className="";
         form2.className="col-sm-12";
