@@ -1,4 +1,3 @@
-
 particleground(document.getElementById('skill'), {
 dotColor: 'rgba(255,255,255,0.5)',
 lineColor: 'rgba(255,255,255,0.1)',
@@ -183,7 +182,7 @@ function validateForm()
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE CORRECT CORDINATOR MOBILE NUMBER";
+            document.getElementById("message").innerHTML="PLEASE ENTER CORRECT 10 DIGIT CORDINATOR MOBILE NUMBER";
             return false;
         }
 
@@ -221,7 +220,7 @@ function validateForm()
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE CORRECT MOBILE NUMBER";
+            document.getElementById("message").innerHTML="PLEASE ENTER CORRECT 10 DIGIT MOBILE NUMBER";
             return false;
         }
         else if(branch[i] == "")
@@ -284,7 +283,7 @@ function disable()
         form3.className="col-sm-12";
         form4.className="hidden";
     }
-    else
+    else if(select==4)
     {
         form2.className="";
         form2.className="col-sm-12";
