@@ -161,6 +161,8 @@ body
 .dev-cont
 {
 	text-align: center;
+	height: 400px;
+	overflow-y: auto;
 }
 .dev-cont .col-sm-6
 {

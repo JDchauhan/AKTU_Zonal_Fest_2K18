@@ -133,7 +133,6 @@ function validateForm()
     course[3] = document.forms["reg-form"]["course[3]"].value;
     var event_name=document.getElementById("event_name").value;
     event_name = parseInt(event_name);
-    console.log(participants);
     if(participants == "null" && event_name != "6"){
         document.getElementById("message").className="";
         document.getElementById("message").className="error";
@@ -285,7 +284,11 @@ function disable()
         form3.className="col-sm-12";
         form4.className="hidden";
     }
+<<<<<<< HEAD
     else if(select==4)
+=======
+    else
+>>>>>>> a66dcbb1189190940b5b181a0d1124b64f8446fb
     {
         form2.className="";
         form2.className="col-sm-12";
