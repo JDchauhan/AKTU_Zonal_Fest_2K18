@@ -161,8 +161,9 @@ body
 .dev-cont
 {
 	text-align: center;
-	height: 400px;
+	height: 500px;
 	overflow-y: auto;
+	padding-bottom: 70px;
 }
 .dev-cont .col-sm-6
 {
@@ -195,4 +196,14 @@ body
 .match_table table tr td
 {
 	padding: 10px;
+}
+.contactus h2
+{
+	color: white;
+	font-family: 'Audiowide', cursive;
+}
+.contactus
+{
+	height: 500px;
+	overflow-y: scroll;
 }

@@ -1,4 +1,3 @@
-
 particleground(document.getElementById('skill'), {
 dotColor: 'rgba(255,255,255,0.5)',
 lineColor: 'rgba(255,255,255,0.1)',
@@ -284,11 +283,7 @@ function disable()
         form3.className="col-sm-12";
         form4.className="hidden";
     }
-<<<<<<< HEAD
     else if(select==4)
-=======
-    else
->>>>>>> a66dcbb1189190940b5b181a0d1124b64f8446fb
     {
         form2.className="";
         form2.className="col-sm-12";
