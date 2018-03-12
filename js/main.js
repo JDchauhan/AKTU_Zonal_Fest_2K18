@@ -182,7 +182,7 @@ function validateForm()
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE CORRECT CORDINATOR MOBILE NUMBER";
+            document.getElementById("message").innerHTML="PLEASE ENTER CORRECT 10 DIGIT CORDINATOR MOBILE NUMBER";
             return false;
         }
 
@@ -220,7 +220,7 @@ function validateForm()
         {
             document.getElementById("message").className="";
             document.getElementById("message").className="error";
-            document.getElementById("message").innerHTML="PLEASE CORRECT MOBILE NUMBER";
+            document.getElementById("message").innerHTML="PLEASE ENTER CORRECT 10 DIGIT MOBILE NUMBER";
             return false;
         }
         else if(branch[i] == "")
