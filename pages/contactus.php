@@ -12,7 +12,7 @@
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 	<title>AKTU Zonal Fest 2K18</title>
@@ -35,6 +35,8 @@
 
 
     <link rel="stylesheet" type="text/css" href="../css/style-extended.css">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
 
 	<script>
 		var countDownDate = new Date("Mar 22, 2018 09:30:00").getTime();
@@ -109,114 +111,34 @@
     <div id="timer" class="timer">
           
     </div>
+    <div style="max-width: 800px; margin: auto; height: 500px; overflow-y: scroll;overflow-x: hidden;" class="contactus" >
+      <h2 style="color: white;font-family: 'Audiowide', cursive;font-size: 20px;">Get In Touch With Us</h2>
 
-      <form action="../resources/api.php?action=download_event_csv" method="POST" style="margin-top: 50px; display: inline-block;">
-
-      <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
-
-      <input type="submit" name="submit" placeholder="Download CSV" value="Download CSV" class="btn-sml" style="width: auto;">
-
-      </form>
-
-      <form action="../resources/api.php?action=download_event_csv_all" method="POST" style="margin-top: 50px; display: inline-block;">
-
-      <input type="text" name="token" placeholder="Token-Id" class="txt-sml" style="margin-top: 10px;"><br>
-
-      <input type="submit" name="submit" placeholder="Download All Data" value="Download All Data" class="btn-sml" style="width: auto;">
-
-      </form>
-      <br><br>
-      <!--<center><div class="match_table">
-        <form action="" method="POST">
-        <table border="1">
-          <tr style="text-align: center;">
-            <td></td>
-            <td><b>COLLEGE</b></td>
-            <td><b>Student name</b></td>
-            <td><b>Event</b></td>
-            <td><b>Roll NO</b></td>
-            <td><b>Sr. NO</b></td>
-          </tr>
-
-          
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><input type="checkbox" name="check"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </table>
-
-        <input type="submit" name="submit" value="Submit" class="btn-sml" style="width: auto;color: black">
-      </form>
-      </div></center>-->
+      <div class="row" style="margin-top: 10px;color: white">
+        <div class="col-sm-4">
+          <i class="fas fa-map-marker-alt fa-2x"></i><br>
+          LOCATION<br><br>
+          Noida Institute of Engineering & Technology, 19, Knowledge Park-II, Institutional Area, Greater Noida (UP) -201306<br>
+        </div>
+        <div class="col-sm-4">
+          <i class="fas fa-phone-square fa-2x"></i>
+          TELEPHONE<br><br>
+          0120- 2328062<br>
+Tele Fax No. : 0120-2328062
+        </div>
+        <div class="col-sm-4">
+          <i class="far fa-envelope fa-2x"></i><br>
+          Email<br><br>
+          Director: director@niet.co.in<br>
+          Registrar: registrar@niet.co.in<br>
+          DSW: dsw.niet@niet.co.in
+        </div>
+      </div>
+    <iframe width="100%" height="250" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJa2aAOHBDDkR2IRUXon9z4I&key=AIzaSyCLej0ytnA2hnb9a9p-KxLBQWERIDPwxWs" allowfullscreen></iframe>
+    </div>
 
 
-        <div class="footer">
+    <div class="footer">
     <div class="line_3"></div>
       Designed And Developed By 
 
@@ -262,26 +184,26 @@
   </script>
 
   <?php 
-		if(isset($_SESSION["msg"])){
-			if($_SESSION["msg"]["type"] == "error"){
-				echo '<script>document.getElementById("message").className="";
-						document.getElementById("message").className="error";
-						document.getElementById("message").innerHTML="<b>' 
-							. $_SESSION["msg"]["head"] . '</b><br/>'
-							. $_SESSION["msg"]["body"] . '";
-					</script>';
-			}else if($_SESSION["msg"]["type"] == "success"){
-				echo '<script>document.getElementById("message").className="";
-						document.getElementById("message").className="success";
-						document.getElementById("message").innerHTML="<b>' 
-							. $_SESSION["msg"]["head"] . '</b><br/>'
-							. $_SESSION["msg"]["body"] . '";
-					</script>';
-			}
-			unset($_SESSION["msg"]);
-		}
-		
-	?>
+    if(isset($_SESSION["msg"])){
+      if($_SESSION["msg"]["type"] == "error"){
+        echo '<script>document.getElementById("message").className="";
+            document.getElementById("message").className="error";
+            document.getElementById("message").innerHTML="<b>' 
+              . $_SESSION["msg"]["head"] . '</b><br/>'
+              . $_SESSION["msg"]["body"] . '";
+          </script>';
+      }else if($_SESSION["msg"]["type"] == "success"){
+        echo '<script>document.getElementById("message").className="";
+            document.getElementById("message").className="success";
+            document.getElementById("message").innerHTML="<b>' 
+              . $_SESSION["msg"]["head"] . '</b><br/>'
+              . $_SESSION["msg"]["body"] . '";
+          </script>';
+      }
+      unset($_SESSION["msg"]);
+    }
+    
+  ?>
     
                 
  
