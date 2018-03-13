@@ -123,7 +123,7 @@
     <div class="success hidden" id="message">
       Success MESSAGE
     </div>
-    <div class="col-sm-12 dev-cont" style="height: 500px; overflow-y: auto;padding-bottom: 400px;">
+    <div class="col-sm-12 dev-cont" style="height: 500px; overflow-y: auto;padding-bottom: 500px;">
      <div class="row">
        <div class="col-sm-6">
         <div  class="content">
