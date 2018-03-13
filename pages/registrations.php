@@ -121,6 +121,8 @@
           
     </div>
     <form name="reg-form" action="../resources/api.php?action=register&amp;session=<?php echo $session_get;?>" onsubmit="return validateForm()" method="POST" style="padding-bottom: 80px; max-width: 700px;margin: auto;">
+
+    	<div style="height:320px; overflow-y:scroll; overflow-x: hidden;">
 			<input type="text" name="clg_name" value='<?php if(isset($_SESSION["clg_details"]["clg_name"])){ echo $_SESSION["clg_details"]["clg_name"]; };?>'  placeholder="College" class="txt-sml">
 			<input type="text" name="co-ordinator_name" value='<?php if(isset($_SESSION["clg_details"]["cord_name"])){ echo $_SESSION["clg_details"]["cord_name"]; };?>' placeholder="Cordinator Name" class="txt-sml">
 			<br>
@@ -161,7 +163,7 @@
         <option value="4" id="option4">Team Size = 4</option>
       </select>
 
-    <div class="row" style="height:150px; overflow-y:scroll;">
+    <div class="row">
     <div class="col-sm-12" id="form1">
 
     	<input type="text" name="name[0]" placeholder="Name 1" class="txt-sml" style="margin-top: 10px;"><br>
@@ -203,6 +205,7 @@
     </div>
     	
     </div>
+</div>
     <input type="submit" name="submit" placeholder="Register" value="Register" class="btn-sml">
     </form>
     <div class="footer">
