@@ -25,7 +25,7 @@
 
     try {
 
-        require_once 'util/config.php';
+        require_once 'util/config1.php';
         require_once 'util/mail_util.php';
         
         function guid(){
@@ -137,53 +137,25 @@
 
                 $conn=connections();
                 
-                //check if user exists
-                if($teamSize == 1){
-                    $statement = executedStatement("SELECT email FROM Student WHERE
-                                                email='$email[0]' ");
-                }else if($teamSize == 2){
-                    $statement = executedStatement("SELECT email FROM Student WHERE
-                                                email='$email[0]' OR email='$email[1]' ");
+                //fresh user
+                for($i = 0; $i < $teamSize; $i++){
+                    $sql = "INSERT INTO Student VALUES ('', '$roll[$i]', '$name[$i]', '$course[$i]', '$branch[$i]', '$year[$i]',
+                                '$email[$i]' , '$mobile[$i]', '$clg_code' ,'$clg', '$cordinator' ,
+                                '$cordinator_email', '$cordinator_mobile' ,'$event_id', '$team','1')"; 
+                    $conn->exec($sql); 
+                }
                 
-                }else if($teamSize == 3){
-                    $statement = executedStatement("SELECT email FROM Student WHERE
-                                                email='$email[0]'  OR email='$email[1]' OR  email='$email[2]' ");
-                }else if($teamSize == 4){
-                    $statement = executedStatement("SELECT email FROM Student WHERE
-                                                email='$email[0]'  OR email='$email[1]'  OR email='$email[2]'  OR email='$email[3]' ");
-                }
-
-                $result = $statement->Fetch(PDO::FETCH_ASSOC);
-
-                if($result){
-                    
-                    $_SESSION["msg"]["type"] = "error";
-                    $_SESSION["msg"]["head"] = "Email ID already exists";
-                    $_SESSION["msg"]["body"] = "One of the email ID you entered already exists in our DataBase";
-                    
-                    $head = "Location: ../pages/registrations.php?session=" . $session_get;                     
-                    header($head);
-
-                }else{
-                    //fresh user
-                    for($i = 0; $i < $teamSize; $i++){
-                        $sql = "INSERT INTO Student VALUES ('', '$roll[$i]', '$name[$i]', '$course[$i]', '$branch[$i]', '$year[$i]',
-                                  '$email[$i]' , '$mobile[$i]', '$clg_code' ,'$clg', '$cordinator' ,
-                                 '$cordinator_email', '$cordinator_mobile' ,'$event_id', '$team','1')"; 
-                        $conn->exec($sql); 
-                    }
-                    
-                    $events_all = $_SESSION["clg_details"]["events"];
-                    unset($events_all[$event_id-1]);
-                    $_SESSION["clg_details"]["events"] = $events_all;
-                    
-                    $_SESSION["msg"]["type"] = "success";
-                    $_SESSION["msg"]["head"] = "Registration Successfull";
-                    $_SESSION["msg"]["body"] = "Participants successfully Registered for this event";
-                    
-                    $head = "Location: ../pages/registrations.php?session=" . $session_get;
-                    header($head);   
-                }
+                $events_all = $_SESSION["clg_details"]["events"];
+                unset($events_all[$event_id-1]);
+                $_SESSION["clg_details"]["events"] = $events_all;
+                
+                $_SESSION["msg"]["type"] = "success";
+                $_SESSION["msg"]["head"] = "Registration Successfull";
+                $_SESSION["msg"]["body"] = "Participants successfully Registered for this event";
+                
+                $head = "Location: ../pages/registrations.php?session=" . $session_get;
+                header($head);   
+            
             }
         }
 
