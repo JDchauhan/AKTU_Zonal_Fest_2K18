@@ -25,7 +25,7 @@
 
     try {
 
-        require_once 'util/config1.php';
+        require_once 'util/config.php';
         require_once 'util/mail_util.php';
         
         function guid(){
