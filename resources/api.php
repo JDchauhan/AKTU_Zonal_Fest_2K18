@@ -85,7 +85,7 @@
             $email = $_POST["email"];
             $roll = $_POST["roll_no"];
             $mobile = $_POST["mob_no"];
-            $course = $_POST["mob_no"];
+            $course = $_POST["course"];
             $branch = $_POST["branch"];
             $year = $_POST["year"];
             
@@ -171,6 +171,14 @@
                 
                     $filepath = "downloads/aktu_zonal.csv";
                 
+                }else{
+                    $_SESSION["msg"]["type"] = "error";
+                    $_SESSION["msg"]["head"] = "Admin Access Denied";
+                    $_SESSION["msg"]["body"] = "Please enter the correct key";
+                    
+                    $head = "Location: ../pages/co-ordinator-panel.php?session=" . $session_get;
+                    header($head);
+                    return;
                 }
             }else{
                 global $session_get;
@@ -188,6 +196,14 @@
                     //construct file
                     $filepath = "downloads/" . $event_id . ".csv";
                     $result = $statement->FetchAll(PDO::FETCH_ASSOC);
+                }else{
+                    $_SESSION["msg"]["type"] = "error";
+                    $_SESSION["msg"]["head"] = "Cordinator Access Denied";
+                    $_SESSION["msg"]["body"] = "Please enter the correct key";
+                    
+                    $head = "Location: ../pages/co-ordinator-panel.php?session=" . $session_get;
+                    header($head);
+                    return;
                 }        
             }
 
@@ -238,8 +254,8 @@
             }else{
                 
                 $_SESSION["msg"]["type"] = "error";
-                $_SESSION["msg"]["head"] = "Access Denied";
-                $_SESSION["msg"]["body"] = "Please enter the correct key";
+                $_SESSION["msg"]["head"] = "No Data Available";
+                $_SESSION["msg"]["body"] = "Currently your data is empty";
                 
                 $head = "Location: ../pages/co-ordinator-panel.php?session=" . $session_get;
                 header($head);
