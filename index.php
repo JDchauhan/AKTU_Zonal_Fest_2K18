@@ -137,12 +137,13 @@
    <div id="timer" class="timer">
           
     </div>
-    <div class="success hidden" id="message">
-      Success MESSAGE
+    <div class="success" id="message">
+      Students Should Carry Their College ID Card and NOC.
     </div>
     
 
     <div class="footer">
+
       <h4 class="head-expanded">
       TECHNICAL, LITERARY AND MANAGEMENT ZONAL FEST
       </h4>
