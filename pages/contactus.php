@@ -122,9 +122,9 @@
         </div>
         <div class="col-sm-4">
           <i class="fas fa-phone-square fa-2x"></i>
-          TELEPHONE<br><br>
-          0120- 2328062<br>
-Tele Fax No. : 0120-2328062
+          TELEPHONE<br>
+          8800978930<br>
+          8750126462<br>
         </div>
         <div class="col-sm-4">
           <i class="far fa-envelope fa-2x"></i><br>

@@ -148,10 +148,10 @@
         <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="8">
            <br> ROBO RACE
         </button>
-        <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="8">
+        <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="9">
             <br>ROBO WAR
         </button>
-        <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="9">
+        <button class="event-linker" type="button" data-target="#myCarousel2" data-slide-to="10">
             TECHNICAL POSTER
         </button>
     </div>
@@ -159,7 +159,7 @@
 
   <div class="item">
     <h3>BUSINESS PLAN</h3>
-    <div class"event_overview" style="height: 270px;overflow-y: scroll;">
+    <div class"event_overview" style="height: 240px;overflow-y: scroll;">
     <ul>      
       <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>Individual participant can take part</li>
@@ -168,6 +168,7 @@
       <li>Means of communication will be English.</li>
       <li>Duration: 45 Minutes.</li>
       <li>The Judges decision will be final and binding to all.</li>
+      <li>DATE : 22/03/18, TIME : 11:00 AM, LOCATION : Auditorium,Academic Block ‘B’</li>
     </ul>
     </div>
     <center>
@@ -181,7 +182,7 @@
 
   <div class="item">
     <h3>BRIDGE KRITI</h3>
-    <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+    <div class"event_overview" style="height: 240px;overflow-y: scroll;">
     <ul>
       <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>Be a real builder, identify how the geometry affects the bridge design, functions and apply that knowledge to construct a model of a bridge using ice cream sticks. Bridge kriti provide a platform to young engineers to showcase their construction skills amidst several constraints. </li>
@@ -191,6 +192,7 @@
       <li>Height of the horizontal span: 11 cm (max.) from the ground </li>
       <li>Stick overlapping should not exceed 3 cm </li>
       <li>Crown of arch must be above horizontal span and its height should not exceed 25 cm.</li>
+      <li>DATE : 23/03/18, TIME : 10:00 AM to 4:30 PM , LOCATION : Room No 004 B</li>
     </ul>
     </div>
     <center>
@@ -204,7 +206,7 @@
 
   <div class="item">
     <h3>CHECK YOUR KNOWLEDGE</h3>
-    <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+    <div class"event_overview" style="height: 240px;overflow-y: scroll;">
     <ul>
       <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>Questions will be of general awareness type</li>
@@ -217,6 +219,7 @@
       <li> For no answer attempted, question will be passed to next team. It will be given chance to answer the question in 5 seconds and  4 point for right answer will be awarded. </li>
       <li>There will be 5 to 10 rounds depending upon number of team participating and availability of team. </li>
       <li>The Judges decision will be final and binding to all. </li>
+      <li>DATE : 22/03/18, TIME : 02:30 PM - 4:30 PM , LOCATION : Room No 308 B and 310 B</li>
     </ul>
   </div>
     <center>
@@ -230,7 +233,7 @@
 
   <div class="item">
     <h3>CODING CONTEST</h3>
-    <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+    <div class"event_overview" style="height: 240px;overflow-y: scroll;">
     <ul>
       <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
       <li>There will be two rounds in the contest</li>
@@ -248,6 +251,9 @@
       <li>Each team would be given 5 problems.</li>
 
       <li>The participants need to code the given problems in JAVA/.NET statements.</li>
+
+      <li>DATE : 22/03/18, TIME : 12:00 TO 02:00 PM , LOCATION : Computer Lab 1 & 2 Academic Block ‘d’
+</li>
     </ul>
   </div>
     <center>
@@ -261,7 +267,7 @@
 
   <div class="item">
     <h3>DEBATE (ENGLISH AND HINDI)</h3>
-    <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+    <div class"event_overview" style="height: 240px;overflow-y: scroll;">
     <ul>
       <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>No. of Participant — Individual Participation (Either Male or Female).</li>
@@ -275,6 +281,10 @@ answer the audience / judges questions /interjections.</li>
 
 <li>Judging Criteria; (i) Content coverage - 5 marks; (ii) Debating skills shown - 10 marks; (iii)Convenience argument skills - 5 marks.</li>
 <li>The Judges decision will be final and binding to all.</li>
+
+<li>DATE (ENGLISH) : 23/03/18, TIME : 11:30 AM, LOCATION : Auditorium Academic Block ‘B’</li>
+<li>DATE (HINDI) : 24/03/18, TIME : 10:00 AM, LOCATION : Seminar Hall, Academic Block ‘C’
+</li>
     </ul>
   </div>
     <center>
@@ -289,7 +299,7 @@ answer the audience / judges questions /interjections.</li>
 
   <div class="item">
       <h3>FRUGAL ENGINEERING</h3>
-      <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+      <div class"event_overview" style="height: 240px;overflow-y: scroll;">
 <ul>
   <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Participation can be as individual or group containing not more than 2 members.
@@ -302,7 +312,8 @@ answer the audience / judges questions /interjections.</li>
 <li>After 45 minutes there will be a bell indicating that only 15 minutes are left.
 <li>Participants need to explain the concepts of what they have made.
 <li>The Judges decision will be final and binding to all.
-
+<li>DATE (HINDI) : 24/03/18, TIME :12:00 PM , LOCATION :Workshop Academic Block ‘B’
+</li>
 </ul>
   </div>
     <center>
@@ -318,7 +329,7 @@ answer the audience / judges questions /interjections.</li>
 <div class="item">
 
   <h3>JUST A MINUTE</h3>
-  <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+  <div class"event_overview" style="height: 240px;overflow-y: scroll;">
   <ul>
     <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Participation can be only as an individual.
@@ -331,6 +342,8 @@ speaker to come up.
 <li>Use of Hindi or any offensive words is strictly prohibited.
 <li>Each speaker will be judged on his/her Content, appropriateness of Language, delivery and diction.
 <li>The Judges decision will be final and binding to all.
+<li>DATE (HINDI) : 24/03/18, TIME : 11:30 AM , LOCATION : Auditorium Academic Block ‘B’
+</li>
   </ul>
   </div>
 <center>
@@ -346,14 +359,14 @@ speaker to come up.
 
 <div class="item">
   <h3>ROBO RACE</h3>
-  <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+  <div class"event_overview" style="height: 240px;overflow-y: scroll;">
   <ul>
     <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Design a manually controlled ROBOT that has capacity to cover maximum distance in shortest
 possible time, challenging the hurdles and be one of the best opponents. <li>The maximum dimension of
 the robot can be 35 x 35 cm (I x b).
 <li>The robot may be wired or wireless.
-<li>The length of the wire (for wired hots) should be long enough to cover the whole track and wire should
+<li>The length of the wire (for wired bots) should be long enough to cover the whole track and wire should
 remain slack during the complete run.
 <li>Max weight must not exceed 6 kg.
 <li>The power supply will be provided maximum up to 12Volt.
@@ -364,6 +377,8 @@ remain slack during the complete run.
 <li>The robot should not damage the arena.
 <li>The robot must not leave behind any of its parts during the run; else it will result in disqualification.
 <li>Unethical behavior could lead to disqualification
+<li>DATE (HINDI) : 23/03/18, TIME : 10:30-12:30 PM , LOCATION : NIET CAMPUS GROUND
+</li>
   </ul>
   </div>
 <center>
@@ -379,7 +394,7 @@ remain slack during the complete run.
 
   <div class="item">
       <h3>ROBO WAR</h3>
-      <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+      <div class"event_overview" style="height: 240px;overflow-y: scroll;">
       <ul>
 <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li> Design and construct a remote controlled robot capable of fighting a one on one tournament.
@@ -400,13 +415,15 @@ disqualified.
 becomes trapped within another robot, then the competitors should make the time keeper aware, the
 fight should be stopped and the robots separated by the safest means.
 The Judges decision will be final and binding to all.
+<li>DATE (HINDI) : 22/03/18, TIME : 02:00-04:30 PM , LOCATION : NIET CAMPUS GROUND
+</li>
       </ul>
   </div>
     <center>
     <form action="registrations.php" method="POST">
       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="0">&lt;</button>
       <input type="submit" name="submit" placeholder="Register" value="REGISTER" class="btn-sml" style="width: auto;">
-       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="1">&gt;</button>
+       <button class="back" type="button" data-target="#myCarousel2" data-slide-to="10">&gt;</button>
     </form>
   </center>
     
@@ -414,7 +431,7 @@ The Judges decision will be final and binding to all.
 
   <div class="item">
         <h3> TECHNICAL POSTER</h3>
-        <div class"event_overview" style="height: 250px;overflow-y: scroll;">
+        <div class"event_overview" style="height: 240px;overflow-y: scroll;">
         <ul>
 <li style="color:rgba(24, 116, 205,1);font-weight: bolder; ">EVENT OVERVIEW</li>
 <li>Participation can be as an individual or in a group of 2.
@@ -430,7 +447,8 @@ Is Each poster should include a topic/title across the top.
 <li> Name of participants should be mentioned . No copying material would be allowed.
 <li> Using cell phone other than call receiving, will disqualify the participant.
 <li>The Judges decision will be final and binding to all.</ul>
-
+<li>DATE (HINDI) : 23/03/18, TIME : 10:00-12:00 PM , LOCATION : Room No. 421-B, ED LAB
+</li>
   </div>
     <center>
     <form action="registrations.php" method="POST">
